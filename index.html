@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dan Enterprises - Home</title>
+    <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'/ >
+    <style>
+        .titla {
+            background-color: #0094ff;
+            color: white;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+            padding: 10px;
+            font-size: large;
+            width: 100%;
+            font-family: 'Trebuchet MS';
+            height:55px;
+        }
+
+        .stitla {
+            background-color: #ffffff;
+            color: grey;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+            padding: 10px;
+            font-size: medium;
+            width: 30%;
+            border-bottom-right-radius: 10px;
+        }
+
+        canvas {
+            border: 1px solid #d3d3d3;
+            background-color: #f1f1f1;
+        }
+
+        .mainI {
+            float: left;
+            width: 30%;
+            box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2), 0 6px 6px 0 rgba(0,0,0,0.19);
+            //background-color: rgba(211, 211, 211, 0.20);
+            background-color:rgba(255, 255, 255, 0.83);
+            margin: 16px;
+            height: 250px;
+            color: white;
+            transition-duration: 1s;
+            display:inline-block;
+           // filter:blur(7px);
+        }
+
+            .mainI:hover {
+                box-shadow: 0 16px 16px 0 rgba(0, 0, 0, 0.19), 0 6px 20px 0 rgba(0,0,0,0.19);
+                //background-color: rgba(211, 211, 211, 0.63);
+                background-color:rgba(211, 211, 211, 0.74);
+            }
+        .bodyI {
+            background-color: #0088ea;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 10px;
+            font-weight: 700;
+            //height:500px;
+        }
+
+        .tI {
+            padding: 10px;
+            color: black;
+        }
+
+        .button {
+            background-color: cornflowerblue; /* Green */
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            transition-duration: 1s;
+            margin: 5px;
+            border-radius: 5px;
+            /*box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);*/
+        }
+
+        .button1 {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        }
+
+        .button:hover {
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+            color: dodgerblue;
+            background-color: white;
+            padding: 15px;
+        }
+        .pagee{
+            background-color:white;
+            width:70%;
+            margin-left:15%;
+            margin-right:15%;
+            
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+        .menuButton {
+            height:100%;
+            width:20%;
+            background-color:cornflowerblue;
+            transition-duration:0.5s;
+            display: inline-block;
+        }
+        .menuButton:hover{
+            background-color:#0088ea;
+        }
+/*scrollbar*/
+::-webkit-scrollbar {
+    /*body*/
+    width: 30px;
+}
+ 
+::-webkit-scrollbar-track {
+    /*track*/
+    background-color:rgba(0,0,0,0);
+    
+    /*border-radius: 10px;*/
+    
+}
+ 
+::-webkit-scrollbar-thumb {
+    /*drag*/
+    //border-radius: 10px;
+    
+    background-image:url(https://sites.google.com/a/lca.edu/haskins/home/me33.png);
+}
+/* {
+    float: left;
+    text-shadow:0px 0px 10px #333;
+}*/
+
+.ly a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    //background-color:rgba(0, 148, 255, 0.80)
+}
+
+.ly a:hover:not(.active) {
+    background-color: #0088ea;
+    transition-duration:1s;
+    text-shadow:0px 0px 10px #333;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    color:white;
+}
+
+.active {
+    float: left;
+    transition-duration:1s;
+    background-color: #1377d8;
+}
+.menutop {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    //background: linear-gradient(lightgray, rgba(255, 255, 255, 0.50));
+    background-color:rgba(103, 169, 217, 0.0);
+   // box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    border:none;
+    //height:100px;
+   // border-bottom:solid;
+    border-color:white;
+   // position:absolute;
+   left:0;
+}
+.notActive{
+    background-color:rgba(0, 148, 255, 0.80)
+}
+
+    </style>
+</head>
+<body onload="" style="font-family:Verdana;background-image:url(http://nicecastles.xyz/wp-content/uploads/2016/03/how-to-build-a-real-castle-tower.jpg);">
+    <iframe height="100" width="100" src="bar.html" class="menutop" id="menutop">
+    <ul class="menutop" >
+        <!--style="box-shadow:0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"-->
+        <li class="ly"><a><img src="http://domenicosottosanti.altervista.org/images/logo.jpg" width="50"height="50"></a></li>
+        <li class="ly"><a class="active" href="Home">Home</a></li>
+        <li class="ly"><a class="notActive" href="#news">News</a></li>
+        <li class="ly"><a class="notActive" href="#contact">Contact</a></li>
+        <li class="ly"><a class="notActive" href="#about">About</a></li>
+        <li style="width:100%;text-decoration:none;border-color:black;margin-top:10px;margin-bottom:0px;float:left;margin-left:100px;border:solid;border-radius:3px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);background-color:rgba(255, 255, 255, 0.55);width:43%"><marquee>Thank's for visiting Daniel.com  &copy;&reg;Dan co.  Tip: Logging in is recommended.   Feeling bored? Play a game!  </marquee></li>
+        <!--<li class="ly"><button id="btn2" class="button">Close Menu Bar</button></li>-->
+        <li class="ly"><a class="button"style="float:right;padding-top:5px;padding-bottom:5px;background-color:#ff6a00" href="Login" onclick="//Login()">Log In</a></li>
+        <li class="ly"><a class="button" style="float:right;padding-top:5px;padding-bottom:5px;background-color:#ff6a00" href="Signup" onclick="//Login()">Sign Up</a></li>
+    </ul>
+        </iframe>
+    <div class="ly"><button id="btn2" class="button" style="position:fixed;top:0;right:0;margin-right:15%;">Close Menu Bar</button></div>
+    <button id="btn1" class="button" style="position: fixed;top:0;right:0;">Open Menu Bar</button>
+    <div style="margin:0px;height:500px;background-color:black;//padding-top:300px;">
+        <video width="600" height="500" loop style="margin-left:30%;margin-left:30%;margin-top:70px;" autoplay>
+            <source src="dap.mp4" type="video/mp4">
+        <iframe width="800" height="400" src="https://www.youtube.com/embed/KuauuSQaS5U" frameborder="0" allowfullscreen loop autoplay style="margin:0px;border:solid;margin:0px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);margin-right:25%;margin-left:25%;margin-top:100px;"></iframe>
+        </video>
+    </div>
+    <div style="border:solid;background-color:#eaeaea;padding:20px;display:inline-block;top:0;right:0;margin-top:100px;position:fixed;border-right-color:#eaeaea;" id="demoee"></div>
+
+    <div id="loginsidebar" style="position: fixed;bottom:0;left:0;background-color:rgba(255, 255, 255, 0.92);list-style-type: none;margin: 0;padding: 0;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);overflow: hidden;"><div><button id="closlogb" class="button">Close</button></div> <iframe src="Logan.html" height="200" width="300"></iframe></div>
+
+        <div style="list-style-type: none;height:600px;"class="pagee">
+            <div class="mainI"><div style="background-color:#ff6a00;" class="bodyI">Log In</div><div class="tI">New! You can now log into Dan Enterprises. Make sure you request your membership in Dan Enterprises before you try to log in.</div><a id="Login" class="button" onclick="Login()">Log In</a></div>
+            <div class="mainI"><div class="bodyI">Dan Games</div><div class="tI">New, coming soon to the Dan App, and Dan Chat</div><a id="Games" class="button" onclick="Games()" href="Games.html">Play</a></div>
+            <div class="mainI"><div class="bodyI">More From Dan Dev</div><div class="tI">See these other apps from Dan Development Including the famous DanChat 1.0</div><a id="MoreA" class="button" onclick="Cterms()"href="Apps.html">More Apps</a></div>
+            <div class="mainI"><a><div class="bodyI">Theatre</div><div class="tI">Watch trailers in the theatre of new, and coming soon Dan Apps.</div><a id="Theatre" class="button" onclick="Dterms()"href="Theatre.html">Watch</a></div>
+        </div>
+    <div class="pagee" style="background-color:white;height:2000px;" id="teest">    
+        <div style="padding:30px;">
+        <h><b>About Dan Enterprises</b></h>
+        <p>Dan Enterprises is part of the Dan innitative, and with the exclusive <i>Club Dan</i>, you can sign in to Daniel.com, and Dan.Enterprises. If you would like to become a member, you can <a href="https://mail.google.com/mail/u/0/#inbox"target="_blank"style="text-decoration:none;"><b>Contact Dan</b></a>. Thanks again for visiting Dan Enterprises.</p>
+        <br>
+        <h><b>Features</b></h>
+        <p>Here at Dan Enterpises, you can play games, created by Dan, and all popular io games.</p>
+        <br>
+        <h><b>Dan Cooperation Signup</b></h>
+        <p>To sign up for club Dan, Dan Enterprises, the Dan cooperation, and Club Dan, <a href="https://mail.google.com/mail/u/0/#inbox"target="_blank"style="text-decoration:none;"><b>Contact Dan</b></a>.</p>
+        <br>
+        <h><b>Ratings</b></h>
+        <p><i>"One word: Exeptional."</i><br>
+            -Dan Ratings
+            <br><br>
+            <i>"Top noch, 5 stars."</i><br>
+            -Dan Standards
+            <br>
+        </p>
+        <br>
+      </div>
+     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        function Dterms() {
+
+         //   var Dwindow = window.open("", "MsgWindow", "width=1000,height=1000")
+        //    Dwindow.document.write('<p>ERROR</p>')
+        //    Dwindow.document.location.href = 'Theatre.html'
+        }
+        function Cterms() {
+
+         //   var Dwindow = window.open("", "MsgWindow", "width=1000,height=1000")
+         //   Dwindow.document.write('<p>ERROR</p>')
+         //   Dwindow.document.location.href = 'Apps.html'
+        }
+        function Games() {
+
+        //    var Dwindow = window.open("", "MsgWindow", "width=1000,height=1000")
+         //   Dwindow.document.write('<p>ERROR</p>')
+         //   Dwindow.document.location.href = 'Games.html'
+        }
+        function Login() {
+
+            var Dwindow = window.open("", "MsgWindow", "width=1000,height=1000")
+            Dwindow.document.write('<p>ERROR</p>')
+            Dwindow.document.location.href = 'Login.html'
+        }
+        var myVar = setInterval(function () { myTimer() }, 1000);
+
+        function myTimer() {
+            var d = new Date();
+            var t = d.toLocaleTimeString();
+            document.getElementById("demoee").innerHTML = t;
+        }
+
+        function myStopFunction() {
+            clearInterval(myVar);
+        }
+   //     coooke();
+        //     function coooke() {
+       
+        //alert('test')
+        function getCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+       // document.getElementById("demoee").innerHTML = 't';
+       // alert(getCookie('username'));
+        function checkCookie() {
+           // alert('testt')
+            var username = getCookie("username");
+            if (username != "") {
+                $("#loginsidebar").animate({ width: "10px" });
+                $("#loginsidebar").animate({ height: "0px" });
+                $("#loginsidebar").animate({ width: "0px" });
+              //  alert("Welcome again " + username);
+            } else {
+              //  username = prompt("Please enter your name:", "");
+              //  if (username != "" && username != null) {
+                 //   setCookie("username", username, 365);
+              //  }
+            }
+        }
+        checkCookie();
+   //     }
+        // function closelogin() {
+        /*
+        setTimeout("setNotification();", 1);
+        function setNotification() {
+            var n
+            if (window.webkitNotifications.checkPermission() != 0) {
+                setNotification();
+                return false;
+            }
+            n = window.webkitNotifications.createHTMLNotification('http://www.your-notification-address.com');
+            n.show();
+        }*/
+        //    }
+    </script>
+    <script>
+        $("#btn1").fadeOut();
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                $("#menutop").animate({ height: "10px" });
+                $("#menutop").animate({ width: "100%" });
+                $("#menutop").animate({ height: "100px" });
+                $("#btn1").fadeOut();
+                $("#btn2").fadeIn();
+            });
+            $("#btn2").click(function () {
+                $("#menutop").animate({ height: "10px" });
+                $("#menutop").animate({ width: "0px" });
+                $("#menutop").animate({ height: "0px" });
+                $("#btn2").fadeOut();
+                $("#btn1").fadeIn();
+            });
+        });
+        $(document).ready(function () {
+            $("#closlogb").click(function () {
+                $("#loginsidebar").animate({ width: "10px" });
+                $("#loginsidebar").animate({ height: "0px" });
+                $("#loginsidebar").animate({ width: "0px" });
+
+            });
+        })
+    </script>
+</body>
+</html>
