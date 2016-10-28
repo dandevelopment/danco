@@ -6,18 +6,15 @@
 <body>
 This is a test.
   <p id="1"></p>
-<script src="//cdn.jsdelivr.net/pouchdb/6.0.7/pouchdb.min.js">
+  <script src="//cdn.jsdelivr.net/pouchdb/6.0.7/pouchdb.min.js">
 </script>
+<script src="pouchdb-6.0.7.min.js"></script>
 <script>
   var db = new PouchDB('dandatabase');
   db.put({
-  _id: 'dandoc',
+  _id: 'username',
   title: 'Dan'
-}).then(function (response) {
-  document.getElementById('1').innerHTML += "worked"
-}).catch(function (err) {
-  console.log(err);
-});
+})
 </script>
 </body>
 </html>
