@@ -1,0 +1,31 @@
+RewriteEngine On
+RewriteCond %{Home.html} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+RewriteEngine On
+RewriteCond %{Dashboard.html} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+RewriteEngine On
+RewriteCond %{Login.html} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+RewriteEngine On
+RewriteCond %{Signup.html} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+RewriteEngine On
+RewriteCond %{Apps.html} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+RewriteEngine On
+RewriteCond %{Games.html} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+RewriteEngine On
+RewriteCond %{Nanowrimo.html} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+RewriteEngine On
+RewriteCond %{won.html} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
