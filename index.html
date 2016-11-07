@@ -270,16 +270,16 @@ s0.parentNode.insertBefore(s1,s0);
         $(document).ready(function(){
     $("body").hover(function(){
         $("#pa1").fadeIn()
-        
-        $("#pa2").fadeIn()
-        
-        $("#pa3").fadeIn()
-       
-        $("#pa4").fadeIn("slow")
-                
-        $("#pa5").fadeIn("slow")
-          
-        $("#pa6").fadeIn("slow")
+        setTimeout(function() {
+        $("#pa2").fadeIn()},1000)
+        setTimeout(function() {
+        $("#pa3").fadeIn()},2000)
+       setTimeout(function() {
+        $("#pa4").fadeIn("slow")},3000)
+                setTimeout(function() {
+        $("#pa5").fadeIn("slow")},4000)
+          setTimeout(function() {
+        $("#pa6").fadeIn("slow")},5000)
                 });
 });
     
