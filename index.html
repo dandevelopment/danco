@@ -268,18 +268,30 @@ s0.parentNode.insertBefore(s1,s0);
         <script>
        
         $(document).ready(function(){
-    $("body").click(function(){
+    $("body").hover(function(){
         $("#pa1").fadeIn()
+        $("#pa1").width(0)
+        $("#pa1").animate(width: '300px')
         setTimeout(function() {
-        $("#pa2").fadeIn()},1000)
+        $("#pa2").fadeIn()
+        $("#pa1").width(0)
+        $("#pa1").animate(width: '300px')},1000)
         setTimeout(function() {
-        $("#pa3").fadeIn()},2000)
+        $("#pa3").fadeIn()
+        $("#pa1").width(0)
+        $("#pa1").animate(width: '300px')},2000)
        setTimeout(function() {
-        $("#pa4").fadeIn("slow")},3000)
+        $("#pa4").fadeIn("slow")
+       $("#pa1").width(0)
+        $("#pa1").animate(width: '300px')},3000)
                 setTimeout(function() {
-        $("#pa5").fadeIn("slow")},4000)
+        $("#pa5").fadeIn("slow")
+                $("#pa1").width(0)
+        $("#pa1").animate(width: '300px')},4000)
           setTimeout(function() {
-        $("#pa6").fadeIn("slow")},5000)
+        $("#pa6").fadeIn("slow")
+          $("#pa1").width(0)
+        $("#pa1").animate(width: '300px')},5000)
                 });
 });
     
