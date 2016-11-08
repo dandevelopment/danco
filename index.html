@@ -267,18 +267,26 @@ s0.parentNode.insertBefore(s1,s0);
   height="700">
 </iframe>
         <script>
-       $(window).scroll(function(){
-    $.each($('#catchf'),function(){
-        var eloffset = $(this).offset();
-        var windowpos = $(window).scrollTop();
-        if(windowpos<eloffset.top) {
-            var finaldestination = 0;
-        } else {
-            var finaldestination = windowpos;
-        }
-        $(this).stop().animate({'top':finaldestination},200);
+(function($) {
+    var element = $('.follow-scroll'),
+        originalY = element.offset().top;
+
+    // Space between element and top of screen (when scrolling)
+    var topMargin = 500;
+
+    // Should probably be set in CSS; but here just for emphasis
+    element.css('position', 'relative');
+
+    $(window).on('scroll', function(event) {
+        var scrollTop = $(window).scrollTop();
+
+        element.stop(false, false).animate({
+            top: scrollTop < originalY
+                    ? 0
+                    : scrollTop - originalY + topMargin
+        }, 500);
     });
-});
+})(jQuery);
         $(document).ready(function(){
             setTimeout(function() {
   //  $("button").hover(function(){
