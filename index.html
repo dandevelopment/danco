@@ -267,7 +267,18 @@ s0.parentNode.insertBefore(s1,s0);
   height="700">
 </iframe>
         <script>
-       
+       $(window).scroll(function(){
+    $.each($('#catchf'),function(){
+        var eloffset = $(this).offset();
+        var windowpos = $(window).scrollTop();
+        if(windowpos<eloffset.top) {
+            var finaldestination = 0;
+        } else {
+            var finaldestination = windowpos;
+        }
+        $(this).stop().animate({'top':finaldestination},200);
+    });
+});
         $(document).ready(function(){
             setTimeout(function() {
   //  $("button").hover(function(){
