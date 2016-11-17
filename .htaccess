@@ -29,3 +29,7 @@ RewriteRule ^([^\.]+)$ $1.html [NC,L]
 RewriteEngine On
 RewriteCond %{won.html} !-f
 RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+RewriteEngine On
+RewriteCond %{info.html} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
