@@ -270,6 +270,16 @@ s0.parentNode.insertBefore(s1,s0);
   height="700">
 </iframe>
         <script>
+            chrome.permissions.request({
+          permissions: ['notifications']
+        }, function(granted) {
+          // The callback argument will be true if the user granted the permissions.
+          if (granted) {
+            //doSomething();
+          } else {
+           // doSomethingElse();
+          }
+        });
                     function getCookie(cname) {
             var name = cname + "=";
             var ca = document.cookie.split(';');
