@@ -229,17 +229,28 @@ x.<!DOCTYPE html>
             }
             return "";
         }
+        var rusername = getCookie("username");
+       
+ 
         //document.getElementById('demoeee').innerHTML = 'Welcome, '// + rusername;
         // alert(getCookie('username'));
         function checkCookie() {
             // alert('testt')
-            var rusername = getCookie("username");
+           
             if (rusername != "") {
                 document.getElementById("demoeee").innerHTML = 'Logged in as: ' + rusername;
                 document.getElementById("logn").innerHTML = '<div class="ly"><a class="button"style="float:right;padding-top:5px;padding-bottom:5px;background-color:#ff6a00" href="Dashboard.html"target="_blank" onclick="//Login()">Dan Dashboard</a></div>';
                 //alert(rusername)
                 //  alert("Welcome again " + username);
+                    new Notification("Welcome, "+rusername, {
+        icon: 'favicon.ico',
+        body: 'Logged In as '+rusername
+    });
             } else {
+                    new Notification("Welcome", {
+        icon: 'favicon.ico',
+        body: 'Welcome, become a member of Dan co by Logging in. To create an account, contact Dan.'
+    });
                 //  username = prompt("Please enter your name:", "");
                 //  if (username != "" && username != null) {
                 //   setCookie("username", username, 365);
