@@ -199,7 +199,51 @@
         <button id="opnlogb" class="button">Open</button>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>/*
+    <script>
+                   function getCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+        var rusername = getCookie("username");
+       
+ 
+        //document.getElementById('demoeee').innerHTML = 'Welcome, '// + rusername;
+        // alert(getCookie('username'));
+        function checkCookie() {
+            // alert('testt')
+           
+            if (rusername != "") {
+            //    document.getElementById("demoeee").innerHTML = 'Logged in as: ' + rusername;
+              //  document.getElementById("logn").innerHTML = '<div class="ly"><a class="button"style="float:right;padding-top:5px;padding-bottom:5px;background-color:#ff6a00" href="Dashboard.html"target="_blank" onclick="//Login()">Dan Dashboard</a></div>';
+                //alert(rusername)
+                //  alert("Welcome again " + username);
+                    new Notification("Welcome, "+rusername, {
+        icon: 'favicon.ico',
+        body: 'Logged In as '+rusername
+    });
+            } else {
+                    new Notification("Welcome", {
+        icon: 'favicon.ico',
+        body: 'Welcome, become a member of Dan co by Logging in. To create an account, contact Dan.'
+    });
+                //  username = prompt("Please enter your name:", "");
+                //  if (username != "" && username != null) {
+                //   setCookie("username", username, 365);
+                //  }
+               // document.getElementById('demoeed').innerHTML = 'Welcome, ' + rusername;
+            }
+        }
+        checkCookie();/*
                 function getCookie(cname) {
             var name = cname + "=";
             var ca = document.cookie.split(';');
