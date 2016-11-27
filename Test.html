@@ -2,15 +2,21 @@
 <html>
 <head>
 <title>TEST</title>
+ <meta name="google-signin-client_id" content="257180149912-7jsbuc0e22qnrpg681cthd7bqm2hn8lr.apps.googleusercontent.com">
 </head>
- <script src='https://cdn1.kongregate.com/javascripts/kongregate_api.js'></script>
+
 <body>
+ <script src="https://apis.google.com/js/platform.js" async defer></script>
  test
+ <div class="g-signin2" data-onsuccess="onSignIn"></div>
  <script>
-    new Notification("Welcome", {
-        icon: 'favicon.ico',
-        body: 'Welcome To Dan co.'
-    });
+ function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail());
+}
  </script>
 </body>
 </html>
