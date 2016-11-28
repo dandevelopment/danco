@@ -159,8 +159,11 @@
 }
 
     </style>
+   <meta name="google-signin-client_id" content="257180149912-7jsbuc0e22qnrpg681cthd7bqm2hn8lr.apps.googleusercontent.com">
 </head>
 <body style="font-family:Verdana;">
+   <script src="https://apis.google.com/js/platform.js" async defer></script>
+ <div class="g-signin2" data-onsuccess="onSignIn"></div>
             <div id="areab" style="border-radius:10px;background-color:lightgrey;padding:10px;color:white;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);width:300px;">
             
             Username: <input id="Username"style="color:grey;border-color:black;border:none;background-color:white;border-bottom:solid" onclick="document.getElementById('Username').value = '';" value="Username"><div id="urm"style="color:red"></div>
@@ -171,6 +174,17 @@
             </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script>
+     function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail());
+       document.cookie = "username="+profile.getName()
+       document.cookie = "photo="+profile.getImageUrl()
+       document.cookie = "email="+profile.getEmail()
+       document.cookie = "signedintogoogle=true"
+}
                 function getCookie(cname) {
             var name = cname + "=";
             var ca = document.cookie.split(';');
