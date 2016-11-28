@@ -230,6 +230,7 @@ ee<!DOCTYPE html>
             var rpassword = getCookie("password");
             var remail = getCookie("email");
             var rphoto = getCookie("photo");
+            var google = getCookie("signedintogoogle");
             var v1 = rphoto.replace("%3A", ":");
             var v2 = v1.replace("%2F", "/");
             var v3 = v2.replace("%2F", "/");
@@ -241,8 +242,16 @@ ee<!DOCTYPE html>
            // var v3 = rphoto.replace("Microsoft", "W3Schools");
            // var v3 = rphoto.replace("Microsoft", "W3Schools");
             if (rusername != "") {
+                var rrr = false;
+                if(google !='true'){
+                rrr = remail.substr('0', remail.indexOf('%40')) + '@' + remail.substr(remail.indexOf('%40') + 3, remail.length);
+                    
+                }
+                else {
+                rrr = remail;
+                }
                 document.getElementById("sin").innerHTML = rusername;
-                document.getElementById("sin2").innerHTML = remail.substr('0', remail.indexOf('%40')) + '@' + remail.substr(remail.indexOf('%40') + 3, remail.length);
+                document.getElementById("sin2").innerHTML = rrr;
                 document.getElementById("sin3").innerHTML = rpassword;
                 if (rphoto != "") {
                     document.getElementById("profph").innerHTML = '<img src="' + v8 + '" style="height:90px;width:110px;"id="profph">';
