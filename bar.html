@@ -215,6 +215,14 @@ x.<!DOCTYPE html>
       //  }
         // document.getElementById('demoeed').innerHTML = 'Welcome, ' //+ rusername;
         //alert('tess')
+        setTimeout(checkusernameth(), 10000)
+function checkusernameth() {
+    if (rusername != "") {
+                document.getElementById("demoeee").innerHTML = 'Logged in as: ' + rusername;
+                document.getElementById("logn").innerHTML = '<div class="ly"><a class="button"style="float:right;padding-top:5px;padding-bottom:5px;background-color:#ff6a00" href="Dashboard.html"target="_blank" onclick="//Login()">Dan Dashboard</a></div>';
+    }
+}
+        
         function getCookie(cname) {
             var name = cname + "=";
             var ca = document.cookie.split(';');
