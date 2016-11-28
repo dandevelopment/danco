@@ -1,4 +1,4 @@
-ee<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Dan Enterprises Dashboard</title>
@@ -221,6 +221,12 @@ ee<!DOCTYPE html>
             document.cookie = "photo=;";
             var myWindow = window.open("", "MsgWindow", "width=200,height=100");
             myWindow.document.write('<p style="font-family:Verdana">Successfully logged out. Now taking you to the homepage.</p>');
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
         }
         //document.getElementById('demoeee').innerHTML = 'Welcome, '// + rusername;
         // alert(getCookie('username'));
