@@ -191,7 +191,7 @@
             <p>Username: <b><span id="sin"></span></b></p>
             <p>Email: <b><span id="sin2"></span></b></p>
             <p>Password: (hidden) <i><b><span id="sin3" style="filter:blur(2px)"></span></b></i></p>
-            <a href="Login.html" class="button">Sign In With A diffrent Account</a><a onclick="delcook()"href="http://dcooperation.ddns.net/" class="button">Sign Out</a>
+            <a href="Login.html" class="button">Sign In With A diffrent Account</a><a onclick="delcook()" class="button">Sign Out</a>
             <br />
             <br /><div style="font-size:20px;"><b>Acount Preferences</b></div>
             <p>Homepage Movie: <b><span>Dan App Preview</span></b><br /><br />Customization coming soon!</p>
@@ -224,7 +224,7 @@
       console.log('User signed out.');}
             var myWindow = window.open("", "MsgWindow", "width=200,height=100");
             myWindow.document.write('<p style="font-family:Verdana">Successfully logged out. Now taking you to the homepage.</p>');
-    
+            documet.src = 'index.html'
   }
         }
         //document.getElementById('demoeee').innerHTML = 'Welcome, '// + rusername;
