@@ -200,6 +200,13 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>
+                var rusername = getCookie("username");
+        setInterval(checkusernameth(), 2000)
+function checkusernameth() {
+    if (rusername == "") {
+                document.getElementById("dashboard").innerHTML = '<b><span style="color:red">Sorry, Dashboard is only avalable for Dan Members. To become a member, press sign up. If you already have a Dan acount, press log in.</span></b><a class="button"style="float:right;padding-top:5px;padding-bottom:5px;background-color:#ff6a00" href="Signup.html"target="_blank" onclick="//Login()">Sign Up</a><a class="button"style="float:right;padding-top:5px;padding-bottom:5px;background-color:#ff6a00" href="Login.html"target="_blank" onclick="//Login()">Log In</a>';
+    }
+}
         function getCookie(cname) {
             var name = cname + "=";
             var ca = document.cookie.split(';');
@@ -220,7 +227,7 @@
             document.cookie = "email=;";
             document.cookie = "photo=;";
                 var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
+                auth2.signOut().then(function () {
       console.log('User signed out.');})
             var myWindow = window.open("", "MsgWindow", "width=200,height=100");
             myWindow.document.write('<p style="font-family:Verdana">Successfully logged out. Now taking you to the homepage.</p>');
