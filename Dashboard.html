@@ -221,7 +221,7 @@
             document.cookie = "photo=;";
                 var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
-      console.log('User signed out.');}
+      console.log('User signed out.');})
             var myWindow = window.open("", "MsgWindow", "width=200,height=100");
             myWindow.document.write('<p style="font-family:Verdana">Successfully logged out. Now taking you to the homepage.</p>');
             documet.src = 'index.html'
@@ -235,7 +235,7 @@
             var rpassword = getCookie("password");
             var remail = getCookie("email");
             var rphoto = getCookie("photo");
-            var google = getCookie("signedintogoogle");
+            var fogoogle = getCookie("signedintogoogle");
             var v1 = rphoto.replace("%3A", ":");
             var v2 = v1.replace("%2F", "/");
             var v3 = v2.replace("%2F", "/");
@@ -248,7 +248,7 @@
            // var v3 = rphoto.replace("Microsoft", "W3Schools");
             if (rusername != "") {
                 var rrr = false;
-                if(google !='true'){
+                if(fogoogle != 'true'){
                 rrr = remail.substr('0', remail.indexOf('%40')) + '@' + remail.substr(remail.indexOf('%40') + 3, remail.length);
                     
                 }
