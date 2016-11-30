@@ -222,6 +222,9 @@ function checkusernameth() {
     if (rusername2 != "") {
                 document.getElementById("demoeee").innerHTML = 'Logged in as: ' + rusername2;
                 document.getElementById("logn").innerHTML = '<div class="ly"><a class="button"style="float:right;padding-top:5px;padding-bottom:5px;background-color:#ff6a00" href="Dashboard.html"target="_blank" onclick="//Login()">Dan Dashboard</a></div>';
+    } else {
+    document.getElementById("demoeee").innerHTML = 'Not Logged in.'
+        document.getElementById("logn").innerHTML = '<div class="ly"><a class="button"style="float:right;padding-top:5px;padding-bottom:5px;background-color:#ff6a00" href="Login.html"target="_blank" onclick="//Login()">Log In</a></div><div class="ly"><a class="button" style="float:right;padding-top:5px;padding-bottom:5px;background-color:#ff6a00" href="Signup.html"target="_blank" onclick="//Login()">Sign Up</a></div>'
     }
 }
         
