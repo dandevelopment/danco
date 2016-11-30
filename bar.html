@@ -216,11 +216,11 @@
         // document.getElementById('demoeed').innerHTML = 'Welcome, ' //+ rusername;
         //alert('tess')
         var rusername = getCookie("username");
-        var myVardo = setInterval(function () { checkusernameth() }, 1000);
+        var myVardo = setInterval(function () { checkusernameth() }, 100);
 function checkusernameth() {
     var rusername2 = getCookie("username");
     if (rusername2 != "") {
-                document.getElementById("demoeee").innerHTML = 'Logged in as: ' + rusername;
+                document.getElementById("demoeee").innerHTML = 'Logged in as: ' + rusername2;
                 document.getElementById("logn").innerHTML = '<div class="ly"><a class="button"style="float:right;padding-top:5px;padding-bottom:5px;background-color:#ff6a00" href="Dashboard.html"target="_blank" onclick="//Login()">Dan Dashboard</a></div>';
     }
 }
@@ -248,7 +248,7 @@ function checkusernameth() {
             // alert('testt')
            
             if (rusername != "") {
-                document.getElementById("demoeee").innerHTML = 'Logged in as: ' + rusername2;
+                document.getElementById("demoeee").innerHTML = 'Logged in as: ' + rusername;
                 document.getElementById("logn").innerHTML = '<div class="ly"><a class="button"style="float:right;padding-top:5px;padding-bottom:5px;background-color:#ff6a00" href="Dashboard.html"target="_blank" onclick="//Login()">Dan Dashboard</a></div>';
                 //alert(rusername)
                 //  alert("Welcome again " + username);
