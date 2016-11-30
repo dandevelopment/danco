@@ -216,7 +216,7 @@
         // document.getElementById('demoeed').innerHTML = 'Welcome, ' //+ rusername;
         //alert('tess')
         var rusername = getCookie("username");
-        setTimeout(checkusernameth(), 10000)
+        setInterval(checkusernameth(), 10000)
 function checkusernameth() {
     if (rusername != "") {
                 document.getElementById("demoeee").innerHTML = 'Logged in as: ' + rusername;
