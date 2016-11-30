@@ -215,6 +215,7 @@
       //  }
         // document.getElementById('demoeed').innerHTML = 'Welcome, ' //+ rusername;
         //alert('tess')
+        var rusername = getCookie("username");
         setTimeout(checkusernameth(), 10000)
 function checkusernameth() {
     if (rusername != "") {
@@ -237,7 +238,7 @@ function checkusernameth() {
             }
             return "";
         }
-        var rusername = getCookie("username");
+        
        
  
         //document.getElementById('demoeee').innerHTML = 'Welcome, '// + rusername;
