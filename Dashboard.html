@@ -201,8 +201,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>
                 var rusername = getCookie("username");
-        setInterval(checkusernameth(), 2000)
-function checkusernameth() {
+        var myVar = setInterval(function () { checkd }, 1000);
+function checkd() {
     if (rusername == "") {
                 document.getElementById("dashboard").innerHTML = '<b><span style="color:red">Sorry, Dashboard is only avalable for Dan Members. To become a member, press sign up. If you already have a Dan acount, press log in.</span></b><a class="button"style="float:right;padding-top:5px;padding-bottom:5px;background-color:#ff6a00" href="Signup.html"target="_blank" onclick="//Login()">Sign Up</a><a class="button"style="float:right;padding-top:5px;padding-bottom:5px;background-color:#ff6a00" href="Login.html"target="_blank" onclick="//Login()">Log In</a>';
     }
