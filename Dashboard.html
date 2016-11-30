@@ -201,7 +201,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>
                 var rusername = getCookie("username");
-        var myVar = setInterval(function () { checkd }, 1000);
+        var myVar = setInterval(function () { checkd() }, 1000);
 function checkd() {
     var rusername2 = getCookie("username");
     if (rusername2 == "") {
