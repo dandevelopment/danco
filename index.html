@@ -175,7 +175,47 @@
 .notActive{
     background-color:rgba(0, 148, 255, 0.80)
 }
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+}
 
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
     </style>
 </head>
     <!--Start of Tawk.to Script-->
@@ -261,6 +301,7 @@ s0.parentNode.insertBefore(s1,s0);
                 <a href="Jobs.html"class="button">Go to jobs</a>
             </div>
       </div>
+        <div id="snackbar">Some text some message..</div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <iframe id="forum_embed"
   src="javascript:void(0)"
@@ -270,6 +311,21 @@ s0.parentNode.insertBefore(s1,s0);
   height="700">
 </iframe>
         <script>
+                    var rusername = getCookie("username");
+            function zeFunction() {
+    var x = document.getElementById("snackbar")
+                if (rusername != "") {
+                        document.getElementById('snackbar').innerHTML = "Welcome, "+rusername
+            } else {
+                    document.getElementById('snackbar').innerHTML = "Hello, log in or sign up with your google acount."
+            }
+        }
+
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+            zeFunction()
+            setTimeout(function() {
             chrome.permissions.request({
           permissions: ['notifications']
         }, function(granted) {
@@ -280,6 +336,7 @@ s0.parentNode.insertBefore(s1,s0);
            // doSomethingElse();
           }
         });
+            }, 10000)
                     function getCookie(cname) {
             var name = cname + "=";
             var ca = document.cookie.split(';');
@@ -294,7 +351,7 @@ s0.parentNode.insertBefore(s1,s0);
             }
             return "";
         }
-        var rusername = getCookie("username");
+
        
  
         //document.getElementById('demoeee').innerHTML = 'Welcome, '// + rusername;
