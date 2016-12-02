@@ -366,7 +366,11 @@ s0.parentNode.insertBefore(s1,s0);
   <a href="Games.html">Games</a>
 </div>
         <script>
-                        var rusername = getCookie("username");
+            var ausername = getCookie("username")
+            setInterval(function(){ausername = getCookie("username")
+                                  setbar();
+                                  },1000)
+            var rusername = getCookie("username");
             var rpassword = getCookie("password");
             var remail = getCookie("email");
             var rphoto = getCookie("photo");
@@ -381,8 +385,8 @@ s0.parentNode.insertBefore(s1,s0);
             //var v8 = v7.replace("%2F", "/");
            // var v3 = rphoto.replace("Microsoft", "W3Schools");
            // var v3 = rphoto.replace("Microsoft", "W3Schools");
-            
-            if (rusername != "") {
+            function setbar(){
+            if (ausername != "") {
                 /*
                 var rrr = 'false';
                 if(fogoogle != 'true'){
@@ -392,24 +396,16 @@ s0.parentNode.insertBefore(s1,s0);
                 else {
                 rrr = remail;
                 }*/
-                document.getElementById("uer").innerHTML = rusername;
-                document.getElementById("").innerHTML = remail;
+                document.getElementById("uer").innerHTML = ausername;
+                document.getElementById("tph").innerHTML = remail;
              //   document.getElementById("sin3").innerHTML = rpassword;
                 if (rphoto != "") {
                     document.getElementById("tph").innerHTML = '<img src="' + rphoto  + '" style="height:120px;width:120px;border-radius: 50px;"id="profph">';
                 }
-              //  document.getElementById("logn").innerHTML = '<div class="ly"><a class="button"style="float:right;padding-top:5px;padding-bottom:5px;background-color:#ff6a00" href="Dashboard"target="_blank" onclick="//Login()">Dan Dashboard</a></div>';
-                //alert(rusername)
-                //  alert("Welcome again " + username);
             } else {
-             //   document.getElementById("dashboard").innerHTML = '<b><span style="color:red">Sorry, Dashboard is only avalable for Dan Members. To become a member, press sign up. If you already have a Dan acount, press log in.</span></b><a class="button"style="float:right;padding-top:5px;padding-bottom:5px;background-color:#ff6a00" href="Signup.html"target="_blank" onclick="//Login()">Sign Up</a><a class="button"style="float:right;padding-top:5px;padding-bottom:5px;background-color:#ff6a00" href="Login.html"target="_blank" onclick="//Login()">Log In</a>';
-                //  username = prompt("Please enter your name:", "");
-                //  if (username != "" && username != null) {
-                //   setCookie("username", username, 365);
-                //  }
-                // document.getElementById('demoeed').innerHTML = 'Welcome, ' + rusername;
+                
             }
-            
+            }
             function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
     document.getElementById("teest").style.marginLeft = "250px";
@@ -420,12 +416,12 @@ function closeNav() {
     document.getElementById("teest").style.marginLeft= "0";
 }
             function welcomes() {
-             rusername = getCookie("username");
+          //   rusername = getCookie("username");
                 zeFunction()
             }
             function zeFunction() {
-                if (rusername != "") {
-                        document.getElementById('snackbar').innerHTML = "Welcome, "+rusername
+                if (ausername != "") {
+                        document.getElementById('snackbar').innerHTML = "Welcome, "+ausername
             } else {
                     document.getElementById('snackbar').innerHTML = "Hello, log in or sign up with your google acount."
             }
