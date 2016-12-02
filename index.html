@@ -313,14 +313,13 @@ s0.parentNode.insertBefore(s1,s0);
         <script>
                     var rusername = getCookie("username");
             function zeFunction() {
-    var x = document.getElementById("snackbar")
                 if (rusername != "") {
                         document.getElementById('snackbar').innerHTML = "Welcome, "+rusername
             } else {
                     document.getElementById('snackbar').innerHTML = "Hello, log in or sign up with your google acount."
             }
         }
-
+        var x = document.getElementById("snackbar")
     x.className = "show";
     setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
 
