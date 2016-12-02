@@ -419,6 +419,7 @@ function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("main").style.marginLeft= "0";
 }
+            function welcomes() {
                     var rusername = getCookie("username");
             function zeFunction() {
                 if (rusername != "") {
@@ -430,8 +431,8 @@ function closeNav() {
         var x = document.getElementById("snackbar")
     x.className = "show";
     setTimeout(function(){ x.className = x.className.replace("show", ""); }, 10000);
-
-            
+            }
+            setTimeout(fucntion(){welcomes()},10000)
             setTimeout(function() {
             chrome.permissions.request({
           permissions: ['notifications']
