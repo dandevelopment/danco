@@ -159,8 +159,27 @@
 .notActive{
     background-color:rgba(0, 148, 255, 0.80)
 }
+#myProgress {
+  position: relative;
+  width: 100%;
+  height: 30px;
+  background-color: #ddd;
+}
 
+#myBar {
+  position: absolute;
+  width: 10%;
+  height: 100%;
+  background-color: #4CAF50;
+}
+
+#label {
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}
     </style>
+    <meta name="google-signin-client_id" content="257180149912-7jsbuc0e22qnrpg681cthd7bqm2hn8lr.apps.googleusercontent.com">
 </head>
 <body onload="" style="font-family:Verdana;background-image:url(http://nicecastles.xyz/wp-content/uploads/2016/03/how-to-build-a-real-castle-tower.jpg);">
     <iframe height="100" width="100" src="bar.html" class="menutop" id="menutop">
@@ -184,6 +203,81 @@
         <h1 style="padding:50px;padding-bottom:10px;color:#0088ea">Sign Up Below</h1>
         <div id="loginsidebar" style="background-color:rgba(255, 255, 255, 0.92) ;overflow: hidden;padding:50px;padding-top:10px;">
             <div><button id="closlogb" class="button">Close</button></div>
+               <script src="https://apis.google.com/js/platform.js" async defer></script>
+ <div class="g-signin2" data-onsuccess="onSignIn"></div>
+            <p id="confi"style="color:green"></p>
+            <script>     function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail());
+       document.cookie = "username="+profile.getName()
+       document.cookie = "photo="+profile.getImageUrl()
+       document.cookie = "email="+profile.getEmail()
+       document.cookie = "signedintogoogle=true"
+                    document.getElementById('confi').innerHTML = 'Sign Up succesfull. Auto signing you in...<br><div id="myProgress"><div id="myBar"><div id="label">10%</div></div></div>'
+setTimeout(function(){ move()}, 1000);
+}
+                function move() {
+  var elem = document.getElementById("myBar");   
+  var width = 10;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+    } else {
+      width++; 
+      elem.style.width = width + '%'; 
+      document.getElementById("label").innerHTML = width * 1  + '%';
+    }
+  }
+}
+                
+                function getCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+        var passl = 'false';
+        
+        if(getCookie('username') != ""){document.getElementById('areab').innerHTML += '<p style="">The Dan servers have detected you may be logged in already.</p>'}
+        function loginbb() {
+            if (document.getElementById('Username').value == 'Jeff' && document.getElementById('Password').value == 'jun') { passl = 'true' }
+            if (document.getElementById('Username').value == 'Lane' && document.getElementById('Password').value == 'bel') { passl = 'true' }
+            if (document.getElementById('Username').value == 'Jim' && document.getElementById('Password').value == 'jin') { passl = 'true' }
+            if (document.getElementById('Username').value == 'Dan' && document.getElementById('Password').value == 'che') { passl = 'true' }
+            if (document.getElementById('Username').value == 'Tob' && document.getElementById('Password').value == 'fre') { passl = 'true' }
+            if (document.getElementById('Username').value == 'Dan' && document.getElementById('Password').value == 'bas') { passl = 'true' }
+            if (document.getElementById('Username').value == 'Jon' && document.getElementById('Password').value == 'gur') { passl = 'true' }
+            if (document.getElementById('Username').value == 'Brian' && document.getElementById('Password').value == 'ben') { passl = 'true' }
+            if (document.getElementById('Username').value == 'Sam' && document.getElementById('Password').value == 'hon') { passl = 'true' }
+            if (document.getElementById('Username').value == 'Pj' && document.getElementById('Password').value == 'gri') { passl = 'true' }
+          if (document.getElementById('Username').value == 'Trey' && document.getElementById('Password').value == 'bas') { passl = 'true' }
+          if(passl == 'true'){
+            document.cookie = "username="+document.getElementById('Username').value+";";
+            document.cookie = "password="+document.getElementById('Password').value+";";
+            document.cookie = "photo="+";";
+            document.getElementById('prm').innerHTML = '<div style="color:green">Successfully Logged In. You can now proceed to the dashboard by pressing <div class="ly"><a class="button"style="float:right;padding-top:5px;padding-bottom:5px;background-color:#ff6a00" href="Dashboard.html"target="_blank" onclick="//Login()">Dan Dashboard</a></div> </div>'
+                new Notification("logged in", {
+        icon: 'favicon.ico',
+        body: 'Successfully Logged In'
+    });
+            passl = 'false';
+            } else { 
+ document.getElementById('prm').innerHTML = 'The username or password is incorrect. Please <div class="ly"><a style="float:right;padding-top:5px;padding-bottom:5px;background-color:#ff6a00" class="button" href="https://mail.google.com/mail/u/0/#inbox"target="_blank">Contact Dan</a></div> if you think this is an error.' 
+                   }
+        }</script>
+            <p style="color:green">SIGNUP IS READY! click the button above, to sign in with your google acount.</p>
             Sorry, Sign up is currently unavalable, due to domain network issues. <a id="tec"class="button" target="_blank" onclick="showin()">Show technichal information</a>
             <div id="info"style="width:70%;height:1000px;padding:30px;"></div>
              <!--<iframe src="#signup.php" height="230" width="500" style="float:left" scrolling="no"frameborder="0"></iframe>
