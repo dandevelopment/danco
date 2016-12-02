@@ -420,7 +420,9 @@ function closeNav() {
     document.getElementById("teest").style.marginLeft= "0";
 }
             function welcomes() {
-                    var rusername = getCookie("username");}
+             rusername = getCookie("username");
+                zeFunction()
+            }
             function zeFunction() {
                 if (rusername != "") {
                         document.getElementById('snackbar').innerHTML = "Welcome, "+rusername
@@ -431,7 +433,7 @@ function closeNav() {
         var x = document.getElementById("snackbar")
     x.className = "show";
     setTimeout(function(){ x.className = x.className.replace("show", ""); }, 10000);
-            }
+            
             setTimeout(fucntion(){welcomes()},10000)
             setTimeout(function() {
             chrome.permissions.request({
