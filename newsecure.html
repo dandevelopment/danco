@@ -181,6 +181,7 @@ var real2 = ''
     var d = document.getElementById("encrypt").value
     if(done == true){
       d2 = d52.replace(" ", "Ɪ");
+      console.log(d2)
       }else{
       d2 = d.replace(" ", "Ɪ");
       done = true
@@ -245,6 +246,7 @@ var real2 = ''
     var e = document.getElementById("decrypt").value
     if(done2 == true){
       e2 = e52.replace("Ɪ", " ")
+      console.log(e2)
       } else {
       e2 = e.replace("Ɪ", " ");
       done2 = true
@@ -318,9 +320,10 @@ var real2 = ''
       i++
       
       } 
-      var fake = 90//d52.length
+      var fake = d52.length
       var i3 = 0
       var real = d52
+      console.log(real)
       while(i3<fake*10){
       i3++
        var rch = Math.floor(Math.random() * 10);
