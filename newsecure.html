@@ -58,10 +58,11 @@
     var decryptinterval = ""
     
     
-          var elem = document.getElementById("Lbar");
+var elem = document.getElementById("Lbar");
   var width = 0;
   
-  
+  var encryptfinal = ''
+  var decryptfinal = ''
   
       var e3 = ''//e2.replace(" 2", "a");
       var e4 = ''//e3.replace(" 3", "b");
@@ -238,7 +239,8 @@ var real2 = ''
        d50 = d49.replace("=", "ꝑ");
        d51 = d50.replace("<", "Ꝓ");
        d52 = d51.replace(">", "ꝓ");
-       
+       console.log(d52)
+      encryptfinal = d52
     }
     
     function workde() {
@@ -303,13 +305,14 @@ var real2 = ''
        e50 = e49.replace("ꝑ", "=");
        e51 = e50.replace("Ꝓ", "<");
        e52 = e51.replace("ꝓ", ">");
-       
+       console.log(e52)
+      decryptfinal = e52
     }
     
     function encrypt() {
    //   width = 0;
    var d = document.getElementById("encrypt").value
-                      elem.style.width = 0
+    elem.style.width = 0
     document.getElementById("label").innerHTML = 0
       
       encryptinterval = setInterval(function(){worken()},0.1)
@@ -320,9 +323,9 @@ var real2 = ''
       i++
       
       } 
-      var fake = d52.length
+      var fake = encryptfinal.length
       var i3 = 0
-      var real = d52
+      var real = encryptfinal
       var rch = ''
       console.log(real)
       while(i3<fake*10){
@@ -355,7 +358,7 @@ var real2 = ''
        if (rch == 9) {
        real += 'ꬸ'
        }
-       
+       console.log(real)
       }
       document.getElementById('encrypted').innerHTML = real
       done = false
