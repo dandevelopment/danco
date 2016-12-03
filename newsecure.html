@@ -369,7 +369,7 @@ var real2 = ''
       var e = document.getElementById("decrypt").value
       decryptinterval= setInterval(function() {workde()},0.1)
       while(i2<50000){
-      if(i2==49998){
+      if(i2>49998){
       clearInterval(decryptinterval)
       }
       i2++
