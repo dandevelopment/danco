@@ -178,6 +178,7 @@ var real2 = ''
 
 
     function worken() {
+    var d = document.getElementById("encrypt").value
     if(done == true){
       d2 = d52.replace(" ", "Ɪ");
       }else{
@@ -239,6 +240,8 @@ var real2 = ''
     }
     
     function workde() {
+    
+    var e = document.getElementById("decrypt").value
     if(done2 == true){
       e2 = e52.replace("Ɪ", " ")
       } else {
@@ -302,9 +305,10 @@ var real2 = ''
     
     function encrypt() {
    //   width = 0;
+   var d = document.getElementById("encrypt").value
                       elem.style.width = 0
     document.getElementById("label").innerHTML = 0
-      var d = document.getElementById("encrypt").value
+      
       encryptinterval = setInterval(function(){worken()},0.1)
       while(i<50000){
       if(i==49998){
