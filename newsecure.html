@@ -191,6 +191,7 @@
       var i3 = 0
       var real = ''
       while(i3<fake*3){
+      i3++
        var rch = Math.floor(Math.random() * 10);
        if (rch == 1) {
        real += 'ꬰ'
@@ -419,8 +420,10 @@ var real2 = ''
 
 
        } 
+       var i4 = 0
        var actual = e52
-       while(i<e52.length){
+       while(i4<e52.length){
+       i4++
        actual = actual.replace("ꬰ", "");
        actual = actual.replace("ꬱ", "");
        actual = actual.replace("ꬲ", "");
