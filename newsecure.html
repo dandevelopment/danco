@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'  type='text/css'>
+
+    <style>
+    .button {
+            background-color: cornflowerblue; /* Green */
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            transition-duration: 1s;
+            margin: 5px;
+            border-radius: 5px;
+            /*box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);*/
+        }
+    </style>
+  </head>
+  <body stye="font-family: Verdana">
+    <h1 style="font:verdana;text-shadow:0px 0px 10px #808080;text-align:center;background-color: cornflowerblue; /* Green */border: none;color: white;float: right;padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;transition-duration: 1s;text-align:center;border-radius:5px;box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);">3.9</h1>
+    <p style="font:verdana;text-align:center;padding-left:10%;width:40%"><div style="margin-left:30%;background-color: efefef; /* Green */border: solid;padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;transition-duration: 1s;text-align:center;border-radius:5px;box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);">
+    <h1>
+    Crypting
+    </h1>
+    <p>Thank you for using DanSecure, a co production of Dan Security.<br>Hint: press the box you want to get the crypt from, and use the keyboard shortcut: ctrl + a (on mac it's command + a)</p>
+     <div style=""><div onClick="savetodrive();google.script.run" class="button">Save to drive</div> | <div onClick="savetoemail()" class="button">Save as email</div></div>
+     <div id="saveencrypted"></div><div id="savedecrypted"></div>
+    <div style="background-color:cornflowerblue;color:white;"id="Lbar"><p id="label"></p></div>
+    <div>
+    <input placeholder="Decrypt" type="text" id="decrypt" >
+    <div onclick="decrypt()"class="button">Decrypt</div>
+    <input placeholder="Encrypt" type="text" id="encrypt" >
+    <div onclick="encrypt()" class="button">Encrypt</div><br>
+    <textarea id="decrypted" style="border:solid;margin:20px;padding:10px;width:50%;height:100px;" rows="10" cols="50" readonly>Where decrypted text will appear</textarea><br>
+    <textarea id="encrypted" style="border:solid;margin:20px;padding:10px;width:50%;height:100px;" rows="10" cols="50" readonly>Where encrypted text will appear</textarea>
+    
+    </div>
+    </div><br>
+    <script src="save.gs"></script>
+    <script>
+  
+    function savetodrive() {
+    document.getElementById('saveencrypted').innerHTML = '<div class="button" onclick="saveencryptedtodrive()">Save Encrypted</div>'
+    document.getElementById('savedecrypted').innerHTML = '<div class="button" onclick="savedecryptedtodrive()">Save Decrypted</div>'
+    }
+    function savetoemail(){
+    document.getElementById('saveencrypted').innerHTML = '<div class="button" onclick="saveencryptedtoemail()">Save Encrypted</div>'
+    document.getElementById('savedecrypted').innerHTML = '<div class="button" onclick="savedecryptedtoemail()">Save Decrypted</div>'
+    }
+    
+   
+    
+    
+    
+    
+          var elem = document.getElementById("Lbar");
+  var width = 0;
+  
+  
+  
+  
+  
+      var d3 = ''//d2.replace("a", " 2");
+      var d4 = ''//d3.replace("b", " 3");
+      var d5 = ''//d4.replace("c", " 4");
+      var d6 = ''//d5.replace("d", " 5");
+      var d7 = ''//d6.replace("e", " 6");
+      var d8 = ''//d7.replace("f", " 7");
+      var d9 = ''//d8.replace("g", " 8");
+      var d10 = ''//d9.replace("h", " 9");
+      var d11 = ''//d10.replace("i", " !)");
+      var d12 = ''//d11.replace("j", " !!");
+      var d13 = ''//d12.replace("k", " !@");
+      var d14 = ''//d13.replace("l", " !#");
+      var d15 = ''//d14.replace("m", " !$");
+      var d16 = ''//d15.replace("n", " !%");
+      var d17 = ''//d16.replace("o", " !^");
+      var d18 = ''//d17.replace("p", " !&");
+      var d19 = ''//d18.replace("q", " !*");
+      var d20 = ''//d19.replace("r", " !(");
+      var d21 = ''//d20.replace("s", " @)");
+      var d22 = ''//d21.replace("t", " @!");
+      var d23 = ''//d22.replace("u", " @@");
+      var d24 = ''//d23.replace("v", " @#");
+      var d25 = ''//d24.replace("w", " @$");
+      var d26 = ''//d25.replace("x", " @%");
+      var d27 = ''//d26.replace("y", " @^");
+      var d28 = ''//d27.replace("z", " @&");
+      var d29 = ''
+      var d30 = ''
+      var d31 = ''
+      var d32 = ''
+      var d33 = ''
+      var d34 = ''
+      var d35 = ''
+      var d36 = ''
+      var d37 = ''
+      var d38 = ''
+      var d39 = ''
+      var d40 = ''
+      var d41 = ''
+      var d42 = ''
+      var d43 = ''
+      var d44 = ''
+      var d45 = ''
+      var d46 = ''
+      var d47 = ''
+      var d48 = ''
+      var d49 = ''
+      var d50 = ''
+      var d51 = ''
+      var d52 = ''
+      
+      var done = false
+      var i = 0
+
+
+
+    
+    function encrypt() {
+   //   width = 0;
+                      elem.style.width = 0
+    document.getElementById("label").innerHTML = 0
+      var d = document.getElementById("encrypt").value
+      while(i<50000){
+      i++
+      if(done == true){
+      d2 = d52.replace(" ", "");
+      }else{
+      d2 = d.replace(" ", "");
+      done = true
+      }
+          elem.style.width = i/500 + '%'; 
+    document.getElementById("label").innerHTML = i/500 * 1  + '%';
+      d3 = d2.replace("a", " Ꜣ");
+      d4 = d3.replace("b", " ꜣ");
+      d5 = d4.replace("c", " Ꜥ");
+      d6 = d5.replace("d", " ꜥ");
+      d7 = d6.replace("e", " Ꜧ");
+      d8 = d7.replace("f", " ꜧ");
+      d9 = d8.replace("g", " Ꜩ");
+      d10 = d9.replace("h", " ꜩ");
+      d11 = d10.replace("i", " Ꜫ");
+      d12 = d11.replace("j", " ꜫ");
+      d13 = d12.replace("k", " Ꜭ");
+      d14 = d13.replace("l", " ꜭ");
+      d15 = d14.replace("m", " Ꜯ");
+      d16 = d15.replace("n", " ꜯ");
+      d17 = d16.replace("o", " ꜰ");
+      d18 = d17.replace("p", " ꜱ");
+      d19 = d18.replace("q", " Ꜳ");
+      d20 = d19.replace("r", " ꜳ");
+      d21 = d20.replace("s", " Ꜵ");
+      d22 = d21.replace("t", " ꜵ");
+      d23 = d22.replace("u", " Ꜷ");
+      d24 = d23.replace("v", " ꜷ");
+      d25 = d24.replace("w", " Ꜹ");
+      d26 = d25.replace("x", " ꜹ");//ặ
+      d27 = d26.replace("y", " Ꜻ");
+      d28 = d27.replace("z", " ꜻ");
+       d29 = d28.replace("1", " Ꜽ");
+       d30 = d29.replace("2", " ꜽ");
+       d31 = d30.replace("3", " Ꜿ");
+       d32 = d31.replace("4", " ꜿ");
+       d33 = d32.replace("5", " Ꝁ");
+       d34 = d33.replace("6", " ꝁ");
+       d35 = d34.replace("7", " Ꝃ");
+       d36 = d35.replace("8", " ꝃ");
+       d37 = d36.replace("9", " Ꝅ");
+       d38 = d37.replace("0", " ꝅ");
+       d39 = d38.replace("!", " Ꝇ");
+       d40 = d39.replace("@", " ꝇ");
+       d41 = d40.replace("#", " Ꝉ");
+       d42 = d41.replace("$", " ꝉ");
+       d43 = d42.replace("%", " Ꝋ");
+       d44 = d43.replace("^", " ꝋ");
+       d45 = d44.replace("&", " Ꝍ");
+       d46 = d45.replace("*", " ꝍ");
+       d47 = d46.replace("(", " Ꝏ");
+       d48 = d47.replace(")", " ꝏ");
+       d49 = d48.replace("-", " Ꝑ");
+       d50 = d49.replace("=", " ꝑ");
+       d51 = d50.replace("<", " Ꝓ");
+       d52 = d51.replace(">", " ꝓ");
+      } 
+      document.getElementById('encrypted').innerHTML = d28
+      d3 = ''//d2.replace("a", " 2");
+      d4 = ''//d3.replace("b", " 3");
+      d5 = ''//d4.replace("c", " 4");
+      d6 = ''//d5.replace("d", " 5");
+      d7 = ''//d6.replace("e", " 6");
+      d8 = ''//d7.replace("f", " 7");
+      d9 = ''//d8.replace("g", " 8");
+      d10 = ''//d9.replace("h", " 9");
+      d11 = ''//d10.replace("i", " !)");
+      d12 = ''//d11.replace("j", " !!");
+      d13 = ''//d12.replace("k", " !@");
+      d14 = ''//d13.replace("l", " !#");
+      d15 = ''//d14.replace("m", " !$");
+      d16 = ''//d15.replace("n", " !%");
+      d17 = ''//d16.replace("o", " !^");
+      d18 = ''//d17.replace("p", " !&");
+      d19 = ''//d18.replace("q", " !*");
+      d20 = ''//d19.replace("r", " !(");
+      d21 = ''//d20.replace("s", " @)");
+      d22 = ''//d21.replace("t", " @!");
+      d23 = ''//d22.replace("u", " @@");
+      d24 = ''//d23.replace("v", " @#");
+      d25 = ''//d24.replace("w", " @$");
+      d26 = ''//d25.replace("x", " @%");
+      d27 = ''//d26.replace("y", " @^");
+      d28 = ''//d27.replace("z", " @&");
+       d29 = ''
+       d30 = ''
+       d31 = ''
+       d32 = ''
+       d33 = ''
+       d34 = ''
+       d35 = ''
+       d36 = ''
+       d37 = ''
+       d38 = ''
+       d39 = ''
+       d40 = ''
+       d41 = ''
+       d42 = ''
+       d43 = ''
+       d44 = ''
+       d45 = ''
+       d46 = ''
+       d47 = ''
+       d48 = ''
+       d49 = ''
+       d50 = ''
+       d51 = ''
+       d52 = ''
+
+
+
+
+
+      done = false
+      i = 0
+    }
+    
+    
+    
+    
+    
+    
+    
+    var e3 = ''//e2.replace(" 2", "a");
+      var e4 = ''//e3.replace(" 3", "b");
+      var e5 = ''//e4.replace(" 4", "c");
+      var e6 = ''//e5.replace(" 5", "d");
+      var e7 = ''//e6.replace(" 6", "e");
+      var e8 = ''//e7.replace(" 7", "f");
+      var e9 = ''//e8.replace(" 8", "g");
+      var e10 = ''//e9.replace(" 9", "h");
+      var e11 = ''//e10.replace(" !)", "i");
+      var e12 = ''//e11.replace(" !!", "j");
+      var e13 = ''//e12.replace(" !@", "k");
+      var e14 = ''//e13.replace(" !#", "l");
+      var e15 = ''//e14.replace(" !$", "m");
+      var e16 = ''//e15.replace(" !%", "n");
+      var e17 = ''//e16.replace(" !^", "o");
+      var e18 = ''//e17.replace(" !&", "p");
+      var e19 = ''//e18.replace(" !*", "q");
+      var e20 = ''//e19.replace(" !(", "r");
+      var e21 = ''//e20.replace(" @)", "s");
+      var e22 = ''//e21.replace(" @!", "t");
+      var e23 = ''//e22.replace(" @@", "u");
+      var e24 = ''//e23.replace(" @#", "v");
+      var e25 = ''//e24.replace(" @$", "w");
+      var e26 = ''//e25.replace(" @%", "x");
+      var e27 = ''//e26.replace(" @^", "y");
+      var e28 = ''//e27.replace(" @&", "z");
+      var e29 = ''
+      var e30 = ''
+      var e31 = ''
+      var e32 = ''
+      var e33 = ''
+      var e34 = ''
+      var e35 = ''
+      var e36 = ''
+      var e37 = ''
+      var e38 = ''
+      var e39 = ''
+      var e40 = ''
+      var e41 = ''
+      var e42 = ''
+      var e43 = ''
+      var e44 = ''
+      var e45 = ''
+      var e46 = ''
+      var e47 = ''
+      var e48 = ''
+      var e49 = ''
+      var e50 = ''
+      var e51 = ''
+      var e52 = ''
+
+
+
+
+
+      var done2 = false
+      var i2 = 0
+
+    function decrypt() {
+   // width = 0;
+                   elem.style.width = 0
+    document.getElementById("label").innerHTML = 0
+      var e = document.getElementById("decrypt").value
+      while(i2<50000){
+      i2++
+      if(done2 == true){
+      e2 = e28.replace("1", " ")
+      } else {
+      e2 = e.replace("1", " ");
+      done2 = true
+      }
+                elem.style.width = i2/500 + '%'; 
+    document.getElementById("label").innerHTML = i2/500 * 1  + '%';
+       e3 = e2.replace(" Ꜣ", "a");
+       e4 = e3.replace(" ꜣ", "b");
+       e5 = e4.replace(" Ꜥ", "c");
+       e6 = e5.replace(" ꜥ", "d");
+       e7 = e6.replace(" Ꜧ", "e");
+       e8 = e7.replace(" ꜧ", "f");
+       e9 = e8.replace(" Ꜩ", "g");
+       e10 = e9.replace(" ꜩ", "h");
+       e11 = e10.replace(" Ꜫ", "i");
+       e12 = e11.replace(" ꜫ", "j");
+       e13 = e12.replace(" Ꜭ", "k");
+       e14 = e13.replace(" ꜭ", "l");
+       e15 = e14.replace(" Ꜯ", "m");
+       e16 = e15.replace(" ꜯ", "n");
+       e17 = e16.replace(" ꜰ", "o");
+       e18 = e17.replace(" ꜱ", "p");
+       e19 = e18.replace(" Ꜳ", "q");
+       e20 = e19.replace(" ꜳ", "r");
+       e21 = e20.replace(" Ꜵ", "s");
+       e22 = e21.replace(" ꜵ", "t");
+       e23 = e22.replace(" Ꜷ", "u");
+       e24 = e23.replace(" ꜷ", "v");
+       e25 = e24.replace(" Ꜹ", "w");
+       e26 = e25.replace(" ꜹ", "x");
+       e27 = e26.replace(" Ꜻ", "y");
+       e28 = e27.replace(" ꜻ", "z");
+       e29 = e.replace(" Ꜽ", "1");;
+       e30 = e.replace(" ꜽ", "2");;
+       e31 = e.replace(" Ꜿ", "3");;
+       e32 = e.replace(" ꜿ", "4");;
+       e33 = e.replace(" Ꝁ", "5");;
+       e34 = e.replace(" ꝁ", "6");;
+       e35 = e.replace(" Ꝃ", "7");;
+       e36 = e.replace(" ꝃ", "8");;
+       e37 = e.replace(" Ꝅ", "9");;
+       e38 = e.replace(" ꝅ", "0");;
+       e39 = e.replace(" Ꝇ", "!");;
+       e40 = e.replace(" ꝇ", "@");;
+       e41 = e.replace(" Ꝉ", "#");;
+       e42 = e.replace(" ꝉ", "$");;
+       e43 = e.replace(" Ꝋ", "%");;
+       e44 = e.replace(" ꝋ", "^");;
+       e45 = e.replace(" Ꝍ", "&");;
+       e46 = e.replace(" ꝍ", "*");;
+       e47 = e.replace(" Ꝏ", "(");;
+       e48 = e.replace(" ꝏ", ")");;
+       e49 = e.replace(" Ꝑ", "-");;
+       e50 = e.replace(" ꝑ", "=");;
+       e51 = e.replace(" Ꝓ", "<");;
+       e52 = e.replace(" ꝓ", ">");;
+
+
+
+
+
+
+
+       }
+             document.getElementById('decrypted').innerHTML = e28
+           e3 = ''//e2.replace(" 2", "a");
+      e4 = ''//e3.replace(" 3", "b");
+      e5 = ''//e4.replace(" 4", "c");
+      e6 = ''//e5.replace(" 5", "d");
+      e7 = ''//e6.replace(" 6", "e");
+      e8 = ''//e7.replace(" 7", "f");
+      e9 = ''//e8.replace(" 8", "g");
+      e10 = ''//e9.replace(" 9", "h");
+      e11 = ''//e10.replace(" !)", "i");
+      e12 = ''//e11.replace(" !!", "j");
+      e13 = ''//e12.replace(" !@", "k");
+      e14 = ''//e13.replace(" !#", "l");
+      e15 = ''//e14.replace(" !$", "m");
+      e16 = ''//e15.replace(" !%", "n");
+      e17 = ''//e16.replace(" !^", "o");
+      e18 = ''//e17.replace(" !&", "p");
+      e19 = ''//e18.replace(" !*", "q");
+      e20 = ''//e19.replace(" !(", "r");
+      e21 = ''//e20.replace(" @)", "s");
+      e22 = ''//e21.replace(" @!", "t");
+      e23 = ''//e22.replace(" @@", "u");
+      e24 = ''//e23.replace(" @#", "v");
+      e25 = ''//e24.replace(" @$", "w");
+      e26 = ''//e25.replace(" @%", "x");
+      e27 = ''//e26.replace(" @^", "y");
+      e28 = ''//e27.replace(" @&", "z");
+       e29 = ''
+       e30 = ''
+       e31 = ''
+       e32 = ''
+       e33 = ''
+       e34 = ''
+       e35 = ''
+       e36 = ''
+       e37 = ''
+       e38 = ''
+       e39 = ''
+       e40 = ''
+       e41 = ''
+       e42 = ''
+       e43 = ''
+       e44 = ''
+       e45 = ''
+       e46 = ''
+       e47 = ''
+       e48 = ''
+       e49 = ''
+       e50 = ''
+       e51 = ''
+       e52 = ''
+
+
+
+
+
+      done2 = false
+      i2 = 0
+    }
+
+    </script>
+    <script></script>
+  </body>
+</html>
+
+
