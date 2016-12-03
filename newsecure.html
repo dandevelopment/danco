@@ -60,8 +60,8 @@
 var elem = document.getElementById("Lbar");
   var width = 0;
   
-  var encryptfinal = ''
-  var decryptfinal = ''
+ // var encryptfinal = ''
+  //var decryptfinal = ''
   
       var e3 = ''//e2.replace(" 2", "a");
       var e4 = ''//e3.replace(" 3", "b");
@@ -179,6 +179,7 @@ var real2 = ''
 
     function worken() {
     var d = document.getElementById("encrypt").value
+    i++
     if(done == true){
       d2 = d52.replace(" ", "Ɪ");
       
@@ -240,15 +241,15 @@ var real2 = ''
        d52 = d51.replace(">", "ꝓ");
        console.log(d52)
       document.getElementById('encrypted').innerHTML = d52
-      encryptfinal = d52
+ //     encryptfinal = d52
     }
     
     function workde() {
-    
+    i2++
     var e = document.getElementById("decrypt").value
     if(done2 == true){
       e2 = e52.replace("Ɪ", " ")
-      console.log(e2)
+    //  console.log(e2)
       } else {
       e2 = e.replace("Ɪ", " ");
       done2 = true
@@ -321,7 +322,7 @@ var real2 = ''
       if(i>49998){
       clearInterval(encryptinterval)
       }
-      i++
+      
       
       } 
       var fake = encryptfinal.length
@@ -377,7 +378,7 @@ var real2 = ''
       if(i2>49998){
       clearInterval(decryptinterval)
       }
-      i2++
+      
       
        } 
        var i4 = 0
