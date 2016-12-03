@@ -187,6 +187,40 @@
        d51 = d50.replace("<", "Ꝓ");
        d52 = d51.replace(">", "ꝓ");
       } 
+      var fake = d52.length
+      var i3 = 0
+      var real = ''
+      while(i3<fake*3){
+       var rch = Math.floor(Math.random() * 10);
+       if (rch == 1) {
+       real += 'ꬰ'
+       }
+       if (rch == 2) {
+       real += 'ꬱ'
+       }
+       if (rch == 3) {
+       real += 'ꬲ'
+       }
+       if (rch == 4) {
+       real += 'ꬳ'
+       }
+       if (rch == 5) {
+       real += 'ꬴ'
+       }
+       if (rch == 6) {
+       real += 'ꬵ'
+       }
+       if (rch == 7) {
+       real += 'ꬶ'
+       }
+       if (rch == 8) {
+       real += 'ꬷ'
+       }
+       if (rch == 9) {
+       real += 'ꬸ'
+       }
+       
+      }
       document.getElementById('encrypted').innerHTML = d52
       d3 = ''//d2.replace("a", " 2");
       d4 = ''//d3.replace("b", " 3");
@@ -310,6 +344,7 @@
 
       var done2 = false
       var i2 = 0
+var real2 = ''
 
     function decrypt() {
    // width = 0;
@@ -376,15 +411,29 @@
        e50 = e49.replace("ꝑ", "=");
        e51 = e50.replace("Ꝓ", "<");
        e52 = e51.replace("ꝓ", ">");
+       
+       
 
 
 
 
 
-
-
+       } 
+       var actual = e52
+       while(i<e52.length){
+       actual = actual.replace("ꬰ", "");
+       actual = actual.replace("ꬱ", "");
+       actual = actual.replace("ꬲ", "");
+       actual = actual.replace("ꬳ", "");
+       actual = actual.replace("ꬴ", "");
+       actual = actual.replace("ꬵ", "");
+       actual = actual.replace("ꬶ", "");
+       actual = actual.replace("ꬷ", "");
+       actual = actual.replace("ꬸ", "");
        }
-             document.getElementById('decrypted').innerHTML = e52
+       
+       
+             document.getElementById('decrypted').innerHTML = actual
            e3 = ''//e2.replace(" 2", "a");
       e4 = ''//e3.replace(" 3", "b");
       e5 = ''//e4.replace(" 4", "c");
