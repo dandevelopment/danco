@@ -176,7 +176,7 @@ var elem = document.getElementById("Lbar");
     function worken() {
     var d = document.getElementById("encrypt").value
     i++
-      if(i>5000){
+      if(i>d.length){
       clearInterval(encryptinterval)
       }
     if(done == true){
@@ -186,8 +186,8 @@ var elem = document.getElementById("Lbar");
       d2 = d.replace(" ", "Ɪ");
       done = true
       }
-          elem.style.width = i/500 + '%'; 
-    document.getElementById("label").innerHTML = i/500 * 1  + '%';
+          elem.style.width = i/d.length + '%'; 
+    document.getElementById("label").innerHTML = i/d.length * 1  + '%';
       d3 = d2.replace("a", "Ꜣ");
       d4 = d3.replace("b", "ꜣ");
       d5 = d4.replace("c", "Ꜥ");
@@ -238,17 +238,18 @@ var elem = document.getElementById("Lbar");
        d50 = d49.replace("=", "ꝑ");
        d51 = d50.replace("<", "Ꝓ");
        d52 = d51.replace(">", "ꝓ");
-       console.log(d52)
+    //   console.log(d52)
        document.getElementById('encrypted').innerHTML = d52
  //     encryptfinal = d52
     }
     
     function workde() {
     i2++
-      if(i>998){
+      var e = document.getElementById("decrypt").value
+      if(i>e.length){
       clearInterval(decryptinterval)
       }
-    var e = document.getElementById("decrypt").value
+    
     if(done2 == true){
       e2 = e52.replace("Ɪ", " ")
     //  console.log(e2)
@@ -256,8 +257,8 @@ var elem = document.getElementById("Lbar");
       e2 = e.replace("Ɪ", " ");
       done2 = true
       }
-    elem.style.width = i2/500 + '%'; 
-    document.getElementById("label").innerHTML = i2/500 * 1  + '%';
+    elem.style.width = i2/e.length + '%'; 
+    document.getElementById("label").innerHTML = i2/e.length * 1  + '%';
        e3 = e2.replace("Ꜣ", "a");
        e4 = e3.replace("ꜣ", "b");
        e5 = e4.replace("Ꜥ", "c");
@@ -308,7 +309,7 @@ var elem = document.getElementById("Lbar");
        e50 = e49.replace("ꝑ", "=");
        e51 = e50.replace("Ꝓ", "<");
        e52 = e51.replace("ꝓ", ">");
-       console.log(e52)
+      // console.log(e52)
       document.getElementById('decrypted').innerHTML = e52
     //  decryptfinal = e52
     }
