@@ -63,6 +63,16 @@ var elem = document.getElementById("Lbar");
  // var encryptfinal = ''
   //var decryptfinal = ''
   
+      var s1 = ''
+      var s2 = ''
+      var s3 = ''
+      var s4 = ''
+      var s5 = ''
+      var s6 = ''
+      var s7 = ''
+      var s8 = ''
+      var s9 = ''
+      
       var e3 = ''//e2.replace(" 2", "a");
       var e4 = ''//e3.replace(" 3", "b");
       var e5 = ''//e4.replace(" 4", "c");
@@ -239,6 +249,39 @@ var elem = document.getElementById("Lbar");
        d51 = d50.replace("<", "Ꝓ");
        d52 = d51.replace(">", "ꝓ");
     //   console.log(d52)
+   //   var i3 = 0
+    //  while(i3<d.length){
+       rch = Math.floor(Math.random() * 10);
+       if (rch == 1) {
+       d52 += 'ꬰ'
+       }
+       if (rch == 2) {
+       d52 += 'ꬱ'
+       }
+       if (rch == 3) {
+       d52 += 'ꬲ'
+       }
+       if (rch == 4) {
+       d52 += 'ꬳ'
+       }
+       if (rch == 5) {
+       d52 += 'ꬴ'
+       }
+       if (rch == 6) {
+       d52 += 'ꬵ'
+       }
+       if (rch == 7) {
+       d52 += 'ꬶ'
+       }
+       if (rch == 8) {
+       d52 += 'ꬷ'
+       }
+       if (rch == 9) {
+       d52 += 'ꬸ'
+       }
+    //   console.log(real)
+    //  }
+  //          }
        document.getElementById('encrypted').innerHTML = d52
  //     encryptfinal = d52
     }
@@ -310,6 +353,15 @@ var elem = document.getElementById("Lbar");
        e51 = e50.replace("Ꝓ", "<");
        e52 = e51.replace("ꝓ", ">");
       // console.log(e52)
+       s1 = e52.replace("ꬰ", "");
+       s2 = s1.replace("ꬱ", "");
+       s3 = s2.replace("ꬲ", "");
+       s4 = s3.replace("ꬳ", "");
+       s5 = s4.replace("ꬴ", "");
+       s6 = s5.replace("ꬵ", "");
+       s7 = s6.replace("ꬶ", "");
+       s8 = s7.replace("ꬷ", "");
+       e52 = s8.replace("ꬸ", "");
       document.getElementById('decrypted').innerHTML = e52
     //  decryptfinal = e52
     }
