@@ -31,12 +31,9 @@
      <div id="saveencrypted"></div><div id="savedecrypted"></div>
     <div style="background-color:#ddd;color:white;"id="Lbar"><p id="label"></p></div>
     <div>
-    <input placeholder="Unzip" type="text" id="decrypt" >
-    <div onclick="decrypt()"class="button">Unzip</div>
-    <input placeholder="Zip" type="text" id="encrypt" >
-    <div onclick="encrypt()" class="button">Zip</div><br>
-    <textarea id="decrypted" style="border:solid;margin:20px;padding:10px;width:50%;height:100px;" rows="10" cols="50" readonly>     Where Unzipped text will appear</textarea><div id="charunzipped"></div><br>
-    <textarea id="encrypted" style="border:solid;margin:20px;padding:10px;width:50%;height:100px;" rows="10" cols="50" readonly>     Where Zipped text will appear</textarea><div id="charzipped"></div>
+    <input placeholder="Unzip" type="text" id="randomize" >
+    <div onclick="randomize()"class="button">Randomize!</div><br>
+    <textarea id="randomized" style="border:solid;margin:20px;padding:10px;width:50%;height:100px;" rows="10" cols="50" readonly>Where Randomized Names Will Appear Here</textarea><div id="charzipped"></div>
     
     </div>
     </div><br>
@@ -57,80 +54,41 @@
     var decryptinterval = ""
     
     
-var elem = document.getElementById("Lbar");
-  var width = 0;
-  
-      //used by workde()
-      var done2 = false
-      var i2 = 0
-      var real2 = ''
-     //used by worken()
-      var done = false
-      var i = 0
-    function worken() {
-    var d = document.getElementById("encrypt").value
-    i++
+    var elem = document.getElementById("Lbar");
+    var width = 0;
+ 
+    var done = false
+    var i = 0
+      
+    function random() {
+      var d = document.getElementById("randomize").value
+      i++
       if(i>d.length){
-      clearInterval(encryptinterval)
+      clearInterval(randinterval)
       }
-    if(done == true){
-      d2 = d52.replace(" ", "Ɪ");
+      
+      if(done == true){
       
       }else{
-      d2 = d.replace(" ", "Ɪ");
+        
       done = true
       }
-          elem.style.width = i/d.length*100 + '%'; 
-    document.getElementById("label").innerHTML = Math.floor(i/d.length*100)  + '%';
-    }
-    
-    function workde() {
-    i2++
-      var e = document.getElementById("decrypt").value
-      if(i2>e.length){
-      clearInterval(decryptinterval)
+      elem.style.width = i/d.length*100 + '%'; 
+      document.getElementById("label").innerHTML = Math.floor(i/d.length*100)  + '%';
       }
     
-    if(done2 == true){
-      e2 = e52.replace("Ɪ", " ")
-      } else {
-      e2 = e.replace("Ɪ", " ");
-      done2 = true
-      }
-    elem.style.width = i2/e.length *100 + '%'; 
-    document.getElementById("label").innerHTML = Math.floor(i2/e.length *100)  + '%';
-
-      document.getElementById('decrypted').innerHTML = e52
-      document.getElementById("charunzipped").innerHTML = e52.length + ' Charachters';
-    }
-    
-    function encrypt() {
-      var d2 = document.getElementById("encrypt").value
-    elem.style.width = 0
-    document.getElementById("label").innerHTML = 0
+    function randomize() {
+      var d2 = document.getElementById("randomize").value
+      elem.style.width = 0
+      document.getElementById("label").innerHTML = 0
       var tiom = 0.1
       if(d2.length>100){tiom = 0.01}
       if(d2.length>1000){tiom = 0.001}
       if(d2.length>10000){tiom = 0.0001}
       console.log(tiom)
-      encryptinterval = setInterval(function(){worken()},tiom)
-
       done = false
       i = 0
-    }
-    
-    function decrypt() {
-       var e2 = document.getElementById("decrypt").value
-   elem.style.width = 0
-   document.getElementById("label").innerHTML = 0
-            var tiom2 = 0.1
-      if(e2.length>100){tiom = 0.01}
-      if(e2.length>1000){tiom = 0.001}
-      if(e2.length>10000){tiom = 0.0001}
-      console.log(tiom2)
-      decryptinterval= setInterval(function() {workde()},tiom2)
-      done2 = false
-      i2 = 0
+      encryptinterval = setInterval(function(){random()},tiom)
     }
     </script>
     <script></script>
