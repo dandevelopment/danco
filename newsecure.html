@@ -262,7 +262,7 @@ var elem = document.getElementById("Lbar");
        d52 += 'ꬲ'
        }
        if (rch == 4) {
-       d52 += 'ꬳ'
+       d52 += 'Ǔ'
        }
        if (rch == 5) {
        d52 += 'ꬴ'
@@ -353,7 +353,7 @@ var elem = document.getElementById("Lbar");
        e51 = e50.replace("Ꝓ", "<");
        e52 = e51.replace("ꝓ", ">");
       // console.log(e52)
-       s1 = e52.replace("ꬰ", "");
+       s1 = e52.replace("ꬰ", "");//Ǔ
        s2 = s1.replace("ꬱ", "");
        s3 = s2.replace("ꬲ", "");
        s4 = s3.replace("ꬳ", "");
@@ -361,7 +361,8 @@ var elem = document.getElementById("Lbar");
        s6 = s5.replace("ꬵ", "");
        s7 = s6.replace("ꬶ", "");
        s8 = s7.replace("ꬷ", "");
-       e52 = s8.replace("ꬸ", "");
+      s9 = s8.replace("Ǔ", "");
+       e52 = s9.replace("ꬸ", "");
       document.getElementById('decrypted').innerHTML = e52
     //  decryptfinal = e52
     }
