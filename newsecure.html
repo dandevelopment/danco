@@ -114,14 +114,6 @@ var elem = document.getElementById("Lbar");
       var e51 = ''
       var e52 = ''
 
-
-
-
-
-      var done2 = false
-      var i2 = 0
-var real2 = ''
-  
       var d3 = ''//d2.replace("a", " 2");
       var d4 = ''//d3.replace("b", " 3");
       var d5 = ''//d4.replace("c", " 4");
@@ -172,7 +164,11 @@ var real2 = ''
       var d50 = ''
       var d51 = ''
       var d52 = ''
-      
+      //used by workde()
+      var done2 = false
+      var i2 = 0
+      var real2 = ''
+     //used by worken()
       var done = false
       var i = 0
 
@@ -180,6 +176,9 @@ var real2 = ''
     function worken() {
     var d = document.getElementById("encrypt").value
     i++
+      if(i>5000){
+      clearInterval(encryptinterval)
+      }
     if(done == true){
       d2 = d52.replace(" ", "Ɪ");
       
@@ -187,8 +186,8 @@ var real2 = ''
       d2 = d.replace(" ", "Ɪ");
       done = true
       }
-     //     elem.style.width = i/500 + '%'; 
-    //document.getElementById("label").innerHTML = i/500 * 1  + '%';
+          elem.style.width = i/500 + '%'; 
+    document.getElementById("label").innerHTML = i/500 * 1  + '%';
       d3 = d2.replace("a", "Ꜣ");
       d4 = d3.replace("b", "ꜣ");
       d5 = d4.replace("c", "Ꜥ");
@@ -240,12 +239,15 @@ var real2 = ''
        d51 = d50.replace("<", "Ꝓ");
        d52 = d51.replace(">", "ꝓ");
        console.log(d52)
-      document.getElementById('encrypted').innerHTML = d52
+       document.getElementById('encrypted').innerHTML = d52
  //     encryptfinal = d52
     }
     
     function workde() {
     i2++
+      if(i>998){
+      clearInterval(decryptinterval)
+      }
     var e = document.getElementById("decrypt").value
     if(done2 == true){
       e2 = e52.replace("Ɪ", " ")
@@ -254,7 +256,7 @@ var real2 = ''
       e2 = e.replace("Ɪ", " ");
       done2 = true
       }
-                elem.style.width = i2/500 + '%'; 
+    elem.style.width = i2/500 + '%'; 
     document.getElementById("label").innerHTML = i2/500 * 1  + '%';
        e3 = e2.replace("Ꜣ", "a");
        e4 = e3.replace("ꜣ", "b");
@@ -308,23 +310,24 @@ var real2 = ''
        e52 = e51.replace("ꝓ", ">");
        console.log(e52)
       document.getElementById('decrypted').innerHTML = e52
-      decryptfinal = e52
+    //  decryptfinal = e52
     }
     
     function encrypt() {
    //   width = 0;
-   var d = document.getElementById("encrypt").value
+//   var d = document.getElementById("encrypt").value
     elem.style.width = 0
     document.getElementById("label").innerHTML = 0
       
       encryptinterval = setInterval(function(){worken()},0.1)
-      while(i<50000){
-      if(i>49998){
-      clearInterval(encryptinterval)
-      }
+   //   while(i<1000){
+    //  if(i>998){
+     // clearInterval(encryptinterval)
+      //}
       
       
-      }/* 
+   //   }
+      /* 
       var fake = encryptfinal.length
       var i3 = 0
       var real = encryptfinal
@@ -370,17 +373,18 @@ var real2 = ''
 
     function decrypt() {
    // width = 0;
-                   elem.style.width = 0
-    document.getElementById("label").innerHTML = 0
-      var e = document.getElementById("decrypt").value
+   elem.style.width = 0
+   document.getElementById("label").innerHTML = 0
+  //    var e = document.getElementById("decrypt").value
       decryptinterval= setInterval(function() {workde()},0.1)
-      while(i2<50000){
-      if(i2>49998){
-      clearInterval(decryptinterval)
-      }
+   //   while(i2<50000){
+    //  if(i2>49998){
+     // clearInterval(decryptinterval)
+      //}
       
       
-       } 
+     //  } 
+      /*
        var i4 = 0
        var actual = e52
        while(i4<e52.length){
@@ -394,7 +398,7 @@ var real2 = ''
        actual = actual.replace("ꬶ", "");
        actual = actual.replace("ꬷ", "");
        actual = actual.replace("ꬸ", "");
-       }
+       }*/
              document.getElementById('decrypted').innerHTML = actual
         done2 = false
       i2 = 0
