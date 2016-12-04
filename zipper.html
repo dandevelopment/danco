@@ -35,8 +35,8 @@
     <div onclick="decrypt()"class="button">Unzip</div>
     <input placeholder="Zip" type="text" id="encrypt" >
     <div onclick="encrypt()" class="button">Zip</div><br>
-    <textarea id="decrypted" style="border:solid;margin:20px;padding:10px;width:50%;height:100px;" rows="10" cols="50" readonly>Where Unzipped text will appear</textarea><br>
-    <textarea id="encrypted" style="border:solid;margin:20px;padding:10px;width:50%;height:100px;" rows="10" cols="50" readonly>Where Zipped text will appear</textarea>
+    <textarea id="decrypted" style="border:solid;margin:20px;padding:10px;width:50%;height:100px;" rows="10" cols="50" readonly>     Where Unzipped text will appear</textarea><div id="charunzipped"></div><br>
+    <textarea id="encrypted" style="border:solid;margin:20px;padding:10px;width:50%;height:100px;" rows="10" cols="50" readonly>     Where Zipped text will appear</textarea><div id="charzipped"></div>
     
     </div>
     </div><br>
@@ -195,6 +195,7 @@ var elem = document.getElementById("Lbar");
       }
           elem.style.width = i/d.length*100 + '%'; 
     document.getElementById("label").innerHTML = Math.floor(i/d.length*100)  + '%';
+     
       /*
       d3 = d2.replace("a", "Ꜣ");
       d4 = d3.replace("b", "ꜣ");
@@ -281,6 +282,7 @@ var elem = document.getElementById("Lbar");
     //  }
   //          }
        document.getElementById('encrypted').innerHTML = d52
+      document.getElementById("charzipped").innerHTML = d52.length + ' Charachters';
  //     encryptfinal = d52
     }
     
@@ -300,6 +302,7 @@ var elem = document.getElementById("Lbar");
       }
     elem.style.width = i2/e.length *100 + '%'; 
     document.getElementById("label").innerHTML = Math.floor(i2/e.length *100)  + '%';
+      
       /*
        e3 = e2.replace("Ꜣ", "a");
        e4 = e3.replace("ꜣ", "b");
@@ -363,6 +366,7 @@ var elem = document.getElementById("Lbar");
       //s9 = s8.replace("Ǔ", "");
       // e52 = s9.replace("ꬸ", "");
       document.getElementById('decrypted').innerHTML = e52
+      document.getElementById("charunzipped").innerHTML = e52.length + ' Charachters';
     //  decryptfinal = e52
     }
     
