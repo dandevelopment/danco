@@ -374,6 +374,7 @@ var elem = document.getElementById("Lbar");
       if(d2.length>100){tiom = 0.01}
       if(d2.length>1000){tiom = 0.001}
       if(d2.length>10000){tiom = 0.0001}
+      console.log(tiom)
       encryptinterval = setInterval(function(){worken()},tiom)
    //   while(i<1000){
     //  if(i>998){
@@ -427,11 +428,16 @@ var elem = document.getElementById("Lbar");
     
     function decrypt() {
    // width = 0;
+       var e2 = document.getElementById("decrypt").value
    elem.style.width = 0
    document.getElementById("label").innerHTML = 0
   //    var e = document.getElementById("decrypt").value
-      
-      decryptinterval= setInterval(function() {workde()},0.01)
+            var tiom2 = 0.1
+      if(e2.length>100){tiom = 0.01}
+      if(e2.length>1000){tiom = 0.001}
+      if(e2.length>10000){tiom = 0.0001}
+      console.log(tiom2)
+      decryptinterval= setInterval(function() {workde()},tiom2)
    //   while(i2<50000){
     //  if(i2>49998){
      // clearInterval(decryptinterval)
