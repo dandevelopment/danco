@@ -365,12 +365,16 @@ var elem = document.getElementById("Lbar");
     }
     
     function encrypt() {
+      var d2 = document.getElementById("encrypt").value
    //   width = 0;
 //   var d = document.getElementById("encrypt").value
     elem.style.width = 0
     document.getElementById("label").innerHTML = 0
-      
-      encryptinterval = setInterval(function(){worken()},0.01)
+      var tiom = 0.1
+      if(d2.length>100){tiom = 0.01}
+      if(d2.length>1000){tiom = 0.001}
+      if(d2.length>10000){tiom = 0.0001}
+      encryptinterval = setInterval(function(){worken()},tiom)
    //   while(i<1000){
     //  if(i>998){
      // clearInterval(encryptinterval)
@@ -426,6 +430,7 @@ var elem = document.getElementById("Lbar");
    elem.style.width = 0
    document.getElementById("label").innerHTML = 0
   //    var e = document.getElementById("decrypt").value
+      
       decryptinterval= setInterval(function() {workde()},0.01)
    //   while(i2<50000){
     //  if(i2>49998){
