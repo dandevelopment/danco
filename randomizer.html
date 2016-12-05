@@ -73,8 +73,11 @@
     array[randomIndex] = temporaryValue; console.log(array[randomIndex])
     }
     while(i != array.length || i>array.length){
+      if(array[i].indexOf("Daniel") != '-1'){
+         array[i] += ' is AWESOME '
+         }
+      array2 += ' <p>' + array[i] + '</p> '
       i++
-      array2 += array[i]
       document.getElementById('randomized').innerHTML = array2  //2
     }
 }
