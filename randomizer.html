@@ -77,9 +77,13 @@
       document.getElementById('randomized').innerHTML = array  //2
     //}
 }
-      
     function randomize() {
-      d = document.getElementById("randomize").innerHTML
+          var val = $.trim($("textarea").val());
+    if (val != "") {
+      d = val
+    //    alert(val);
+    }
+      //d = document.getElementById("randomize").innerHTML
       dsplit = d.split(", ")
       elem.style.width = 0
       document.getElementById("label").innerHTML = 0
