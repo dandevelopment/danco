@@ -76,7 +76,7 @@ var last = false
     array[randomIndex] = temporaryValue; console.log(array[randomIndex])
   }
     while(i != array.length || i>array.length){
-      if(i==array.length){last = true}
+      if(i==array.length - 1){last = true}
       console.log('LAST: '+last)
       if(array[i].indexOf("Daniel") != '-1'){
          array[i] = ' <span style="color:red">Daniel is AWESOME</span> '
