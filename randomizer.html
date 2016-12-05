@@ -72,11 +72,11 @@
     array[currentIndex] = array[randomIndex]; console.log(array[currentIndex])
     array[randomIndex] = temporaryValue; console.log(array[randomIndex])
     }
-    //while(i != array.length || i>array.length){
-      //i++
-      //array2 += array[i]
-      document.getElementById('randomized').innerHTML = array  //2
-    //}
+    while(i != array.length || i>array.length){
+      i++
+      array2 += array[i]
+      document.getElementById('randomized').innerHTML = array2  //2
+    }
 }
     function randomize() {
           var val = $.trim($("textarea").val());
