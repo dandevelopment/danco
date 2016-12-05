@@ -59,7 +59,7 @@
     function shuffle(array) {
       var i = 0
   var currentIndex = array.length, temporaryValue, randomIndex;
-var br = ''
+var br = '<br>'
   // While there remain elements to shuffle...
   while (0 != currentIndex) {
 
@@ -77,9 +77,9 @@ var br = ''
          array[i] = ' <p style="color:red">Daniel is AWESOME</p> '
          }
       if(br == '<br>') {
-      br = ''
+      br = '1'
       } else {
-      br = '<br><br>'
+      if(br == 1){br = '<br>'}
       }
       array2 += ' <div style="margin:0">' + array[i] + '</div> '+ br
       i++
