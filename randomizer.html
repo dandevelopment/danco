@@ -61,6 +61,8 @@
   var currentIndex = array.length, temporaryValue, randomIndex;
 var br = '<br>'
 var br2 = '<br>'
+var hady = ''
+var last =false
   // While there remain elements to shuffle...
   while (0 != currentIndex) {
 
@@ -74,6 +76,7 @@ var br2 = '<br>'
     array[randomIndex] = temporaryValue; console.log(array[randomIndex])
   }
     while(i != array.length || i>array.length){
+      if(i==array.length){last = true}
       if(array[i].indexOf("Daniel") != '-1'){
          array[i] = ' <span style="color:red">Daniel is AWESOME</span> '
          }
@@ -88,12 +91,12 @@ var br2 = '<br>'
       array2 += br + array[i] + br2
       i++
    //   document.getElementById('randomized').innerHTML = ''
-      document.getElementById('randomized').innerHTML = array2  //2
-      
-    }
-      if(br != '<br>'){
-      document.getElementById('randomized').innerHTML += '</div>'
+            if(last==true && br2 !='</div>'){
+      hady = '</div>'
       }
+      document.getElementById('randomized').innerHTML = array2+hady  //2
+
+    }
 }
     function randomize() {
           var val = $.trim($("textarea").val());
