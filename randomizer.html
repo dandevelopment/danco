@@ -59,7 +59,8 @@
     function shuffle(array) {
       var i = 0
   var currentIndex = array.length, temporaryValue, randomIndex;
-var br = '<br>'
+var br = ''
+var br2 = ''
   // While there remain elements to shuffle...
   while (0 != currentIndex) {
 
@@ -74,16 +75,16 @@ var br = '<br>'
     }
     while(i != array.length || i>array.length){
       if(array[i].indexOf("Daniel") != '-1'){
-         array[i] = ' <p style="color:red">Daniel is AWESOME</p> '
+         array[i] = ' <span style="color:red">Daniel is AWESOME</span> '
          }
-      if(br == '<br>') {
-      br = '1'
+      if(br == '') {
+      br = '<div style="border:solid">'
+      br2 = ''
       } else {
-      if(br == 1){br = '<br>'}
+      br = ''
+        br2 = '</div>'
       }
-      var br2 = ''
-      if (br == '<br>'){br2 = '<br>'}
-      array2 += ' <div style="margin:0">' + array[i] + '</div> '+ br2
+      array2 += br + array[i] + br2
       i++
       document.getElementById('randomized').innerHTML = array2  //2
     }
