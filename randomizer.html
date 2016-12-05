@@ -83,7 +83,7 @@ var last =false
     
       if(br == '<br>') {
       br = '<div style="border:solid;padding:10px;margin:5px;border-radius:10px;">'
-      br2 = ''
+      br2 = '</div>'
       } else {
       br = '<br>'
         br2 = '</div>'
@@ -91,9 +91,9 @@ var last =false
       array2 += br + array[i] + br2
       i++
    //   document.getElementById('randomized').innerHTML = ''
-            if(last==true && br2 !='</div>'){
-      hady = '</div>'
-      }
+    //        if(last==true && br2 !='</div>'){
+     // hady = '</div>'
+     // }
       document.getElementById('randomized').innerHTML = array2+hady  //2
 
     }
