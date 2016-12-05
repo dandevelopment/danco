@@ -74,14 +74,14 @@ var br = ''
     }
     while(i != array.length || i>array.length){
       if(array[i].indexOf("Daniel") != '-1'){
-         array[i] += ' <p style="color:red">is AWESOME</p> '
+         array[i] = ' <p style="color:red">Daniel is AWESOME</p> '
          }
       if(br == '<br>') {
       br = ''
       } else {
-      br = '<br>'
+      br = '<br><br>'
       }
-      array2 += ' <div>' + array[i] + '</div> '+ br
+      array2 += ' <div style="margin:0">' + array[i] + '</div> '+ br
       i++
       document.getElementById('randomized').innerHTML = array2  //2
     }
