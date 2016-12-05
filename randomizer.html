@@ -77,7 +77,7 @@ var br2 = '<br>'
       if(array[i].indexOf("Daniel") != '-1'){
          array[i] = ' <span style="color:red">Daniel is AWESOME</span> '
          }
-    }
+    
       if(br == '<br>') {
       br = '<div style="border:solid;padding:10px;margin:5px;border-radius:10px;">'
       br2 = '<br>'
@@ -88,8 +88,8 @@ var br2 = '<br>'
       array2 += br + array[i] + br2
       i++
       document.getElementById('randomized').innerHTML = array2  //2
-      }
-    
+      
+    }
 }
     function randomize() {
           var val = $.trim($("textarea").val());
