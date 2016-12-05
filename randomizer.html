@@ -26,14 +26,14 @@
     <h1>
     Randomizing...
     </h1>
-    <p>Thank you for using DanRand, a co production of Dan co.<br>Hint: press the box you want to get the groups from, and use the keyboard shortcut: ctrl + a (on mac it's command + a)</p>
+    <p>Thank you for using DanRand, a co production of Dan co.<br>Tip: press the box you want to get the groups from, and use the keyboard shortcut: ctrl + a (on mac it's command + a). How to use: enter items in the 'Enter item here' box. Seperate items with: ', ' (comma and space)</p>
      <div style=""><div onClick="savetodrive();google.script.run" class="button">Save to drive</div> | <div onClick="savetoemail()" class="button">Save as email</div></div>
      <div id="saveencrypted"></div><div id="savedecrypted"></div>
     <div style="background-color:#ddd;color:white;"id="Lbar"><p id="label"></p></div>
     <div>
-    <input placeholder="Unzip" type="text" id="randomize" >
+    <textarea id="randomize" rows="50" cols="30">Enter items here seperated by ', '.</textarea>
     <div onclick="randomize()"class="button">Randomize!</div><br>
-    <textarea id="randomized" style="border:solid;margin:20px;padding:10px;width:50%;height:100px;" rows="10" cols="50" readonly>Where Randomized Names Will Appear Here</textarea><div id="charzipped"></div>
+    <ooo id="randomized" style="border:solid;margin:20px;padding:10px;width:50%;height:100px;">Where Randomized Names Will Appear Here</ooo>
     
     </div>
     </div><br>
@@ -48,49 +48,45 @@
     document.getElementById('savedecrypted').innerHTML = '<div class="button" onclick="savedecryptedtoemail()">Save Unzipped</div>'
     }
     
-   
+    var dsplit = ''
     
-    var encryptinterval = ""
-    var decryptinterval = ""
-    
-    
+    var randinterval = ""
     var elem = document.getElementById("Lbar");
     var width = 0;
- 
-    var done = false
-    var i = 0
-      
-    function random() {
-      var d = document.getElementById("randomize").value
+    var array2 = '';
+    var d = ''//document.getElementById("randomize").value 
+    function shuffle(array) {
+      var i = 0
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 != currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+    }
+    while(i != array.length || i>array.length){
       i++
-      if(i>d.length){
-      clearInterval(randinterval)
-      }
+      array2 += array[i]
+      document.getElementById('randomized').innerHTML = array2
+    }
+}
       
-      if(done == true){
-      
-      }else{
-        
-      done = true
-      }
-      elem.style.width = i/d.length*100 + '%'; 
-      document.getElementById("label").innerHTML = Math.floor(i/d.length*100)  + '%';
-      }
-    
     function randomize() {
-      var d2 = document.getElementById("randomize").value
+      d = document.getElementById("randomize").innerHTML
+      dsplit = d.split(", ")
       elem.style.width = 0
       document.getElementById("label").innerHTML = 0
-      var tiom = 0.1
-      if(d2.length>100){tiom = 0.01}
-      if(d2.length>1000){tiom = 0.001}
-      if(d2.length>10000){tiom = 0.0001}
-      console.log(tiom)
-      done = false
-      i = 0
-      encryptinterval = setInterval(function(){random()},tiom)
+      shuffle(dsplit)
     }
     </script>
     <script></script>
   </body>
 </html>
+//ideas from http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
