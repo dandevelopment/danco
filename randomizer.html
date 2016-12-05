@@ -34,7 +34,7 @@
     <div>
     <textarea id="randomize" rows="10" cols="60">Enter items here separated by ', '.</textarea>
     <div onclick="randomize()"class="button">Randomize!</div><br>
-    <ooo id="randomized" style="border:solid;margin:50px;padding:10px;width:50%;height:100px;">Where Randomized Names Will Appear Here</ooo>
+    <ooo id="randomized" style="margin:50px;padding:10px;width:50%;height:100px;">Randomized Names Will Appear Here</ooo>
     
     </div>
     </div><br>
@@ -59,7 +59,7 @@
     function shuffle(array) {
       var i = 0
   var currentIndex = array.length, temporaryValue, randomIndex;
-
+var br = ''
   // While there remain elements to shuffle...
   while (0 != currentIndex) {
 
@@ -74,9 +74,14 @@
     }
     while(i != array.length || i>array.length){
       if(array[i].indexOf("Daniel") != '-1'){
-         array[i] += ' is AWESOME '
+         array[i] += ' <p style="color:red">is AWESOME</p> '
          }
-      array2 += ' <p>' + array[i] + '</p> '
+      if(br == '<br>') {
+      br = ''
+      } else {
+      br = '<br>'
+      }
+      array2 += ' <div>' + array[i] + '</div> '+ br
       i++
       document.getElementById('randomized').innerHTML = array2  //2
     }
