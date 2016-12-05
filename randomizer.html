@@ -81,7 +81,9 @@ var br = '<br>'
       } else {
       if(br == 1){br = '<br>'}
       }
-      array2 += ' <div style="margin:0">' + array[i] + '</div> '+ br
+      var br2 = ''
+      if (br == '<br>'){br2 = '<br>'}
+      array2 += ' <div style="margin:0">' + array[i] + '</div> '+ br2
       i++
       document.getElementById('randomized').innerHTML = array2  //2
     }
