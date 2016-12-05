@@ -62,7 +62,7 @@
 var br = '<br>'
 var br2 = '<br>'
 var hady = ''
-var last =false
+var last = false
   // While there remain elements to shuffle...
   while (0 != currentIndex) {
 
@@ -77,25 +77,27 @@ var last =false
   }
     while(i != array.length || i>array.length){
       if(i==array.length){last = true}
+      console.log('LAST: '+last)
       if(array[i].indexOf("Daniel") != '-1'){
          array[i] = ' <span style="color:red">Daniel is AWESOME</span> '
          }
     
       if(br == '<br>') {
       br = '<div style="border:solid;padding:10px;margin:5px;border-radius:10px;">'
-      br2 = '</div>'
+      br2 = ''
       } else {
       br = '<br>'
         br2 = '</div>'
       }
       array2 += br + array[i] + br2
       i++
-   //   document.getElementById('randomized').innerHTML = ''
-    //        if(last==true && br2 !='</div>'){
-     // hady = '</div>'
-     // }
-      document.getElementById('randomized').innerHTML = array2+hady  //2
-
+ document.getElementById('randomized').innerHTML = ''
+          if(last==true){
+      hady = '</div>'
+      }
+      console.log('/DIV?: '+hady)
+      document.getElementById('randomized').innerHTML = array2 + hady //2
+      console.log(FINAL: +document.getElementById('randomized').innerHTML)
     }
 }
     function randomize() {
