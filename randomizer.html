@@ -32,8 +32,10 @@
      <div id="saveencrypted"></div><div id="savedecrypted"></div>
     <div style="background-color:#ddd;color:white;"id="Lbar"><p id="label"></p></div>
     <div>
+      <div id="inpu">
     <textarea id="randomize" rows="10" cols="60">Enter items here separated by ', '.</textarea>
     <div onclick="randomize()"class="button">Randomize!</div><br>
+        </div>
     <ooo id="randomized" style="margin:50px;padding:10px;width:50%;height:100px;">Randomized Names Will Appear Here</ooo>
     
     </div>
@@ -115,6 +117,7 @@ var last = false
       elem.style.width = 0
       document.getElementById("label").innerHTML = 0
       shuffle(dsplit)
+      document.getElementById('inpu').innerHTML = '<a onclick="location.reload();"class="button">Randomize another set of items</a>'
     }
     </script>
     <script>//ideas from http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array</script>
