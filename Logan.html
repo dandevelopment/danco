@@ -157,7 +157,23 @@
 .notActive{
     background-color:rgba(0, 148, 255, 0.80)
 }
-
+#myProgress {
+  position: relative;
+  width: 100%;
+  height: 30px;
+  background-color: #ddd;
+}
+#myBar {
+  position: absolute;
+  width: 10%;
+  height: 100%;
+  background-color: #4CAF50;
+}
+#label {
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}
     </style>
    <meta name="google-signin-client_id" content="257180149912-7jsbuc0e22qnrpg681cthd7bqm2hn8lr.apps.googleusercontent.com">
 </head>
@@ -184,6 +200,22 @@
        document.cookie = "photo="+profile.getImageUrl()
        document.cookie = "email="+profile.getEmail()
        document.cookie = "signedintogoogle=true"
+       document.getElementById('confi').innerHTML = 'Sign in succesfull. Signing you in...<br><div id="myProgress"><div id="myBar"><div id="label">10%</div></div></div>'
+       setTimeout(function(){ move()}, 1000);
+}
+    function move() {
+  var elem = document.getElementById("myBar");   
+  var width = 0;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+    } else {
+      width++; 
+      elem.style.width = width + '%'; 
+      document.getElementById("label").innerHTML = width * 1  + '%';
+    }
+  }
 }
                 function getCookie(cname) {
             var name = cname + "=";
