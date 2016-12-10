@@ -490,6 +490,8 @@ function closeNav() {
             }
         }
         checkCookie();
+             document.cookie = "page="+document.location.href
+            //setInterval(function(){},1000)
 (function($) {
     var element = $('#catchf'),
         originalY = element.offset().top;
