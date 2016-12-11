@@ -490,10 +490,11 @@ function closeNav() {
             }
         }
         checkCookie();
-            setInterval(function(){
-             document.cookie = "page="+document.location.href+';'
-            alert(document.location.href)
-            },1000)
+        //    setInterval(function(){
+           //  document.cookie = "page="+document.location.href+';'
+           // alert(document.location.href)
+        //    },1000)
+            myIframe.contentWindow.postMessage('hello', '*');
             //setInterval(function(){},1000)
 (function($) {
     var element = $('#catchf'),
