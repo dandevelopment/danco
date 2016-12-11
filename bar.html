@@ -173,13 +173,19 @@
    </ul>
     <div style="border:thin;background-color:rgba(255, 255, 255, 0.80);padding:9px;display:inline-block;top:0;right:0;margin-top:40px;margin-right:9px;position:fixed;/*border-right-color:#eaeaea;*/" id="demoeee">Not Logged In.</div>
     <script>
-        setInterval(function(){
-        if(getCookie('page')=='https://dictatordan.github.io/danco/index.html'){
-           alert('worked')
-           } else {
+        window.onmessage = function(e){
+    if (e.data == 'hello') {
+        alert('It works!');
+    }
+};
+
+     //   setInterval(function(){
+  //      if(getCookie('page')=='https://dictatordan.github.io/danco/index.html'){
+   //        alert('worked')
+    //       } else {
      //      alert(getCookie('page'))
-           }
-        },1000)
+    //       }
+     //   },1000)
      //   alert('test')
        // $("#btn1").fadeOut();
         //  alert('tess')/*
