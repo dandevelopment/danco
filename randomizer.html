@@ -255,6 +255,7 @@
     <div>
       <div id="inpu">
         Display Numbers <input type="checkbox" id="myCheck">
+        Split Into Groups <input type="checkbox" id="myCheck2">
     <textarea id="randomize" rows="10" cols="60" style="width:100%">Enter items here separated by ', '.</textarea>
     <div onclick="randomize()"class="button">Randomize!</div><br>
         </div>
@@ -316,12 +317,17 @@ var addone = 0
       } else {
       addone = ''
       }
+      if(document.getElementById("myCheck2").checked){
       if(br == '<br>') {
       br = '<div style="border:solid;padding:10px;margin:5px;border-radius:10px;">'
       br2 = ''
       } else {
       br = '<br>'
         br2 = '</div>'
+      }
+      } else {
+      br = '<br>'
+        br2 = '<br>'
       }
       array2 += br + addone + array[i] + br2
       i++
