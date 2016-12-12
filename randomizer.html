@@ -291,6 +291,7 @@ var br = '<br>'
 var br2 = '<br>'
 var hady = ''
 var last = false
+var addone = 0
   // While there remain elements to shuffle...
   while (0 != currentIndex) {
 
@@ -309,7 +310,7 @@ var last = false
       if(array[i].indexOf("Daniel") != '-1'){
      //    array[i] = ' <span style="color:red">Daniel is AWESOME</span> '
          }
-    
+      addone = i++
       if(br == '<br>') {
       br = '<div style="border:solid;padding:10px;margin:5px;border-radius:10px;">'
       br2 = ''
@@ -317,7 +318,7 @@ var last = false
       br = '<br>'
         br2 = '</div>'
       }
-      array2 += br + i + '. ' + array[i] + br2
+      array2 += br + math.floor(i + 1) + '. ' + array[i] + br2
       i++
  document.getElementById('randomized').innerHTML = ''
           if(last==true){
