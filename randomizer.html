@@ -321,10 +321,10 @@ var numberthrough = 0
       addone = ''
       }
       if(document.getElementById("myCheck2").checked){
-        if(Math.floor(i+1) % document.getElementById('def').value != 0) {
+        if(Math.floor(i+1) % document.getElementById('def').value == 1) {
           br = '<div style="border:solid;padding:10px;margin:5px;border-radius:10px;">'
           br2 = ''
-        } else {
+        } else if (Math.floor(i+1) % document.getElementById('def').value == 0){
           br = '<br>'
           br2 = '</div>'
         }
