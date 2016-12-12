@@ -254,6 +254,7 @@
     <div style="background-color:#ddd;color:white;"id="Lbar"><p id="label"></p></div>
     <div>
       <div id="inpu">
+        Display Numbers <input type="checkbox" id="myCheck">
     <textarea id="randomize" rows="10" cols="60" style="width:100%">Enter items here separated by ', '.</textarea>
     <div onclick="randomize()"class="button">Randomize!</div><br>
         </div>
@@ -310,7 +311,11 @@ var addone = 0
       if(array[i].indexOf("Daniel") != '-1'){
      //    array[i] = ' <span style="color:red">Daniel is AWESOME</span> '
          }
+      if(document.getElementById("myCheck").checked){
       addone = i + 1
+      } else {
+      addone = 0
+      }
       if(br == '<br>') {
       br = '<div style="border:solid;padding:10px;margin:5px;border-radius:10px;">'
       br2 = ''
