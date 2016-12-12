@@ -310,7 +310,7 @@ var addone = 0
       if(array[i].indexOf("Daniel") != '-1'){
      //    array[i] = ' <span style="color:red">Daniel is AWESOME</span> '
          }
-      addone = i++
+      addone = i + 1
       if(br == '<br>') {
       br = '<div style="border:solid;padding:10px;margin:5px;border-radius:10px;">'
       br2 = ''
@@ -318,7 +318,7 @@ var addone = 0
       br = '<br>'
         br2 = '</div>'
       }
-      array2 += br + math.floor(i + 1) + '. ' + array[i] + br2
+      array2 += br + addone + '. ' + array[i] + br2
       i++
  document.getElementById('randomized').innerHTML = ''
           if(last==true){
