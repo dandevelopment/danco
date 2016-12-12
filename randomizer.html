@@ -312,7 +312,7 @@ var addone = 0
      //    array[i] = ' <span style="color:red">Daniel is AWESOME</span> '
          }
       if(document.getElementById("myCheck").checked){
-      addone = i + 1
+      addone = i + 1 + '. '
       } else {
       addone = 0
       }
@@ -323,7 +323,7 @@ var addone = 0
       br = '<br>'
         br2 = '</div>'
       }
-      array2 += br + addone + '. ' + array[i] + br2
+      array2 += br + addone + array[i] + br2
       i++
  document.getElementById('randomized').innerHTML = ''
           if(last==true){
