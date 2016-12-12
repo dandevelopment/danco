@@ -297,6 +297,7 @@ var hady = ''
 var last = false
 var addone = 0
 var numberthrough = 0
+var hwgr = document.getElementById('def').value
   // While there remain elements to shuffle...
   while (0 != currentIndex) {
 
@@ -321,16 +322,19 @@ var numberthrough = 0
       addone = ''
       }
       if(document.getElementById("myCheck2").checked){
-        if(Math.floor(i+1) % document.getElementById('def').value == 1) {
+        if(Math.floor(i+1) % hwgr == 1) {
           br = '<div style="border:solid;padding:10px;margin:5px;border-radius:10px;">'
           br2 = ''
-        } else if (Math.floor(i+1) % document.getElementById('def').value == 0){
+        } else if (Math.floor(i+1) % hwgr == 0){
           br = '<br>'
           br2 = '</div>'
+        } else {
+          br2 = ''
+          br = '<br>' 
         }
       } else {
         br = '<br>'
-        br2 = '<br>'
+        br2 = ''
       }
       array2 += br + addone + array[i] + br2
       i++
