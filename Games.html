@@ -383,6 +383,7 @@ function updateGameArea() {
         myObstacles.push(new component(10, x - height - gap, "green", x, height + gap));
     }
     for (i = 0; i < myObstacles.length; i += 1) {
+        ool++
         myObstacles[i].x += -1.3 - ool;
         myObstacles[i].update();
     }
@@ -395,7 +396,7 @@ function updateGameArea() {
 function everyinterval(n) {
     if ((myGameArea.frameNo / n) % 1 == 0) {return true;}
     return false;
-    ool+=0.05
+   // ool+=0.05
 }
     window.addEventListener('keyup', function (e) {
         myGameArea.keyz = false;
