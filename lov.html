@@ -186,14 +186,48 @@
     <div class="pagee" style="background-color:white;height:1000px;margin-top:150px;margin-bottom:30px;padding:50px" id="teest">    
     <h1>Loveifyer</h1><br><div style="background-color:#efefef;padding:50px;height:150px">
     <input type="text" id="first" style="text-align: center;padding:10px;padding-bottom:0px;border-top-right-radius:5px;border-top-left-radius:5px;border:none;border-bottom:solid;">
-    <img height="100"width="100" src="http://shushi168.com/data/out/108/36023764-heart-image.png" style="right:65%;position:absolute;">
+    <img height="100"width="100" src="http://shushi168.com/data/out/108/36023764-heart-image.png" style="right:45%;position:absolute;">
     <input type="text" id="second" style="text-align: center;padding:10px;padding-bottom:0px;border-top-right-radius:5px;border-top-left-radius:5px;float:right;border:none;border-bottom:solid;">
-    </div>
+    <div class="button" id="lov" onclick="lovify()">Lovify</div>
+        
+        <div style="border:solid;border-radius:10px;padding:20px;" id="area">Percentage will appear here.</div>
+        </div>
     
      </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>
-    
+        
+                function getCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+        
+        var first = ''
+        var second = ''
+        var per = ''
+    function lovify(){
+    first = document.getElementById('first').value
+    second = document.getElementById('second').value
+        if(getCookie(first)==first){
+        document.getElementById().innerHTML = first + ' & ' + second + ' have a ' + '<span style="font-size:30px">' + getCookie(first+'#')+ '%</span> chance of being together.'
+        } else {
+            per = Math.floor((Math.random() * 100) + 1);
+            document.getElementById().innerHTML = first + ' & ' + second + ' have a ' + '<span style="font-size:30px">' + per + '%</span> chance of being together.'
+        document.cookie = first + '#' + "=" + per
+        document.cookie = first + '' + "=" + first
+        }
+        
+    }
     </script>
     <script>
         function Dterms() {
@@ -229,20 +263,7 @@
         //     function coooke() {
        
         //alert('test')
-        function getCookie(cname) {
-            var name = cname + "=";
-            var ca = document.cookie.split(';');
-            for (var i = 0; i < ca.length; i++) {
-                var c = ca[i];
-                while (c.charAt(0) == ' ') {
-                    c = c.substring(1);
-                }
-                if (c.indexOf(name) == 0) {
-                    return c.substring(name.length, c.length);
-                }
-            }
-            return "";
-        }
+
        // document.getElementById("demoee").innerHTML = 't';
        // alert(getCookie('username'));
         function checkCookie() {
