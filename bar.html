@@ -261,7 +261,45 @@ function checkusernameth() {
         document.getElementById('menutop').style.border = 'none'
             document.getElementById('menutop').style.background = 'linear-gradient(rgba(103, 169, 217, 0.76), rgba(0,0,0,0))';
         }
-            
+       
+        var ti = top.title
+        var hj = ''
+        SetInterval(function(){
+        if(ti != top.title){
+           top.title=ti
+           } else {
+             hj =  Math.floor(Math.random()*10)
+               if(hj == 1){
+           top.title = "Dan is watching👀"
+                  }
+                  if(hj == 2){
+           top.title = "Hi "+getCookie('username')
+                  }
+               if(hj == 3){
+           top.title = "Having fun?"
+                  }
+                  if(hj == 4){
+           top.title = "Play a game!!"
+                  }
+               if(hj == 5){
+           top.title = "Are you logged in?"
+                  }
+                  if(hj == 6){
+           top.title = "Hmmmmmm..."
+                  }
+               if(hj == 7){
+           top.title = "Are these tooltips entertaining?"
+                  }
+                  if(hj == 8){
+           top.title = "How big is your tab?"
+                  }
+               if(hj == 9){
+           top.title = "I wonder..."
+                  }
+           }
+        
+        
+        },4000)
       //  )
        
  
