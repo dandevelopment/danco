@@ -264,11 +264,14 @@ function checkusernameth() {
        
         var ti = top.title
         var hj = ''
+        console.log(ti)
         setInterval(function(){
         if(ti != top.title){
            top.title=ti
+            console.log('TI: '+top.title)
            } else {
              hj =  Math.floor(Math.random()*10)
+               console.log('RANDOM: '+hj)
                if(hj == 1){
            top.title = "Dan is watching"
                   }
@@ -296,6 +299,7 @@ function checkusernameth() {
                if(hj == 9){
            top.title = "I wonder..."
                   }
+               console.log('TITLE: '+top.title)
            }
         
         
