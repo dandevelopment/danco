@@ -266,7 +266,7 @@ function checkusernameth() {
         var hj = ''
         console.log(ti)
         setInterval(function(){
-        if(ti != top.title){
+        if(ti != window.parent.document.title){
            window.parent.document.title=ti
             console.log('TI: '+window.parent.document.title)
            } else {
