@@ -355,8 +355,10 @@ s0.parentNode.insertBefore(s1,s0);
     <div style="margin:0px;height:500px;background-color:black;//padding-top:300px;">
         <div class="diy-slideshow">
     <figure class="show">
+        <div id="itin" onclick="rrr()">
         <iframe width="854" height="420" style="" src="https://www.youtube.com/embed/PPluq6MOlmA" onclick="//rrr()"id="arg" frameborder="0" allowfullscreen></iframe><figcaption>"Starlight" by <a href="http://www.flickr.com/photos/chaoticmind75/10738494123/in/set-72157626146319517">ChaoticMind75</a>.</figcaption> 
-    </figure>
+    </div>
+            </figure>
   <figure>
     <img src="http://themarklee.com/wp-content/uploads/2013/12/starlight.jpg" height="400" /><figcaption>"Starlight" by <a href="http://www.flickr.com/photos/chaoticmind75/10738494123/in/set-72157626146319517">ChaoticMind75</a>.</figcaption> 
     </figure>
@@ -461,14 +463,9 @@ s0.parentNode.insertBefore(s1,s0);
   <a href="Games.html">Games</a>
 </div>
         <script>
-            document.getElementById("arg").contentDocument.addEventListener('click',function(){
-            rrr()
-            })
             var stoptimer = false
             function rrr(){
-            
-             stoptimer = true;
-             
+             stoptimer = true;             
             }
             
             var ausername = getCookie("username")
