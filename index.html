@@ -355,7 +355,7 @@ s0.parentNode.insertBefore(s1,s0);
     <div style="margin:0px;height:500px;background-color:black;//padding-top:300px;">
         <div class="diy-slideshow">
     <figure class="show">
-        <iframe width="854" height="480" style="" src="https://www.youtube.com/embed/PPluq6MOlmA" frameborder="0" allowfullscreen></iframe><figcaption>"Starlight" by <a href="http://www.flickr.com/photos/chaoticmind75/10738494123/in/set-72157626146319517">ChaoticMind75</a>.</figcaption> 
+        <iframe width="854" height="480" style="" src="https://www.youtube.com/embed/PPluq6MOlmA" onclick="rrr()" frameborder="0" allowfullscreen></iframe><figcaption>"Starlight" by <a href="http://www.flickr.com/photos/chaoticmind75/10738494123/in/set-72157626146319517">ChaoticMind75</a>.</figcaption> 
     </figure>
   <figure>
     <img src="http://themarklee.com/wp-content/uploads/2013/12/starlight.jpg" height="400" /><figcaption>"Starlight" by <a href="http://www.flickr.com/photos/chaoticmind75/10738494123/in/set-72157626146319517">ChaoticMind75</a>.</figcaption> 
@@ -461,6 +461,13 @@ s0.parentNode.insertBefore(s1,s0);
   <a href="Games.html">Games</a>
 </div>
         <script>
+            var stoptimer = false
+            function rrr(){
+             if(stoptimer == false){
+             stoptimer == true;
+             }
+            }
+            
             var ausername = getCookie("username")
             setInterval(function(){ausername = getCookie("username")
                                   setbar();
@@ -885,7 +892,12 @@ var showCurrent = function(){
   // add .show to the one item that's supposed to have it
   $items[itemToShow].classList.add('show');    
 };
-
+setInterval(function{
+            if(stoptimer == false){
+                      counter++;
+     showCurrent();
+}
+            },10000)
 // add click events to prev & next buttons 
 document.querySelector('.next').addEventListener('click', function() {
      counter++;
@@ -946,8 +958,6 @@ document.querySelector('.prev').addEventListener('click', function() {
             n.show();
         }*/
         //    }
-    </script>
-    <script>
         $("#btn1").fadeOut();
         $(document).ready(function () {
             $("#btn1").click(function () {
