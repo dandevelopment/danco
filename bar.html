@@ -267,37 +267,37 @@ function checkusernameth() {
         console.log(ti)
         setInterval(function(){
         if(ti != top.title){
-           top.title=ti
+           window.parent.document.title=ti
             console.log('TI: '+window.parent.document.title)
            } else {
              hj =  Math.floor(Math.random()*10)
                console.log('RANDOM: '+hj)
                if(hj == 1){
-           top.title = "Dan is watching"
+           window.parent.document.title = "Dan is watching"
                   }
                   if(hj == 2){
-           top.title = "Hi "+getCookie('username')
+           window.parent.document.title = "Hi "+getCookie('username')
                   }
                if(hj == 3){
-           top.title = "Having fun?"
+           window.parent.document.title = "Having fun?"
                   }
                   if(hj == 4){
-           top.title = "Play a game!!"
+           window.parent.document.title = "Play a game!!"
                   }
                if(hj == 5){
-           top.title = "Are you logged in?"
+           window.parent.document.title = "Are you logged in?"
                   }
                   if(hj == 6){
-           top.title = "Hmmmmmm..."
+           window.parent.document.title = "Hmmmmmm..."
                   }
                if(hj == 7){
-           top.title = "Are these tooltips entertaining?"
+           window.parent.document.title = "Are these tooltips entertaining?"
                   }
                   if(hj == 8){
-           top.title = "How big is your tab?"
+           window.parent.document.title = "How big is your tab?"
                   }
                if(hj == 9){
-           top.title = "I wonder..."
+           window.parent.document.title = "I wonder..."
                   }
                console.log('TITLE: '+top.title)
            }
