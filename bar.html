@@ -335,6 +335,11 @@ function checkusernameth() {
         }
         checkCookie();
             //    chrome.runtime.onStartup.addListener(checkCookie())
+        if(getCookie('bh') != ''){
+        document.cookie = 'bh='+getCookie('bh')+top.location.href+';'
+        } //else {
+        
+      //  }
     </script>
 </body>
 </html>
