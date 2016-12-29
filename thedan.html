@@ -3,6 +3,29 @@
 <head>
 <title>DAN ONLY</title>
 <style>
+	.button {
+            background-color: cornflowerblue; /* Green */
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            transition-duration: 1s;
+            margin: 5px;
+            border-radius: 5px;
+            /*box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);*/
+        }
+        .button1 {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        }
+        .button:hover {
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+            color: dodgerblue;
+            background-color: white;
+            padding: 15px;
+        }
 .one {
   text-decoration: none;
   color: grey;
@@ -90,7 +113,7 @@ function getDE(){
     <span href="#" style="" class="one" onclick="encryptf()">
     <input placeholder="Encrypt" style="border:none;border-bottom:solid;background-color:#efefef;" id="encrypt">
 		</span>
-		<p style="float:right" onclick="getEN()">COPY</p>
+		<p style="float:right" onclick="getEN()"class="button">COPY</p>
 		<textarea id="encrypted" readonly cols="20" rows="3" style="float:right">encrypted</textarea></div>
   <br>
   <br><br>
@@ -99,7 +122,7 @@ function getDE(){
     <span href="#" style="" class="one">
     <input placeholder="Decrypt" style="border:none;border-bottom:solid;background-color:#efefef;" id="decrypt">
   </span>
-	<p style="float:right" onclick="getDE()">COPY</p>
+	<p style="float:right" onclick="getDE()"class="button">COPY</p>
 	<textarea id="decrypted" readonly cols="20" rows="3" style="float:right">decrypted</textarea>
 	
   </div>
