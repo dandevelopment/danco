@@ -1,0 +1,109 @@
+<!doctype HTML>
+<html>
+<head>
+<title>DAN ONLY</title>
+<style>
+.one {
+  text-decoration: none;
+  color: grey;
+  border-radius: 40px;
+  border: solid;
+  background-color: #efefef;
+  padding: 10px;
+  transition-duration: 1s
+}
+
+.one:hover {
+  border-radius: 0px
+}
+
+</style>
+</head>
+<script>
+var encrypt = ''
+var decrypt = ''
+
+var encrypted = ''
+var decrypted = ''
+
+console.log('started')
+setInterval(function() {
+  if ('' != document.getElementById('encrypt').value) {
+    encryptf()
+  }
+}, 1000)
+
+function encryptf() {
+  console.log('encrypt starting...')
+  encrypt = document.getElementById('encrypt').value
+  var therand = Math.floor(Math.random() * 1000)
+  var en = therand + 'I'
+  var i = 0
+  while (i != encrypt.length) {
+    en = en.concat('|' + Math.floor(Math.floor(Math.floor(encrypt.charCodeAt(i) * 76754) + therand)))
+    i++
+  }
+  console.log(en)
+  document.getElementById('encrypted').innerHTML = en
+  console.log('encrypt finished')
+  console.log(' ')
+}
+
+setInterval(function() {
+  if ('' != document.getElementById('decrypt').value) {
+    decryptf()
+  }
+}, 1000)
+
+function decryptf() {
+  console.log('decrypt starting...')
+  decrypt = document.getElementById('decrypt').value
+
+  var enc = '' //decrypt.split("]")
+  var theotherrand = decrypt.split("I")
+  var leet = theotherrand[0]
+  console.log('INTEGER: ' + leet)
+  var ic = 0
+  var charachterssplit = theotherrand[1].split("|")
+  while (ic != charachterssplit.length) {
+    enc = enc.concat(String.fromCharCode(Math.floor(Math.floor(charachterssplit[ic] - leet)) / 76754))
+    ic++
+  }
+
+
+  console.log(enc)
+  document.getElementById('decrypted').innerHTML = enc
+  console.log('decrypt finished')
+  console.log(' ')
+}
+
+function getEN(){
+ window.prompt("Copy to clipboard: Ctrl+C, Enter", document.getElementById('encrypted').value)
+}
+function getDE(){
+ window.prompt("Copy to clipboard: Ctrl+C, Enter", confirm(document.getElementById('decrypted').value)
+}
+
+</script>
+<body style="font-family:Verdana;padding:20px;background-color:white">
+  <div>
+    <span href="#" style="" class="one" onclick="encryptf()">
+    <input placeholder="Encrypt" style="border:none;border-bottom:solid;background-color:#efefef;" id="encrypt">
+		</span>
+		<p style="float:right" onclick="getEN()">COPY</p>
+		<textarea id="encrypted" readonly cols="20" rows="3" style="float:right">encrypted</textarea></div>
+  <br>
+  <br><br>
+  <br>
+  <div>
+    <span href="#" style="" class="one">
+    <input placeholder="Decrypt" style="border:none;border-bottom:solid;background-color:#efefef;" id="decrypt">
+  </span>
+	<p style="float:right" onclick="getDE()">COPY</p>
+	<textarea id="decrypted" readonly cols="20" rows="3" style="float:right">decrypted</textarea>
+	
+  </div>
+  <br>
+  <br>
+</body>
+</html>
