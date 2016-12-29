@@ -198,10 +198,10 @@
   console.log('Name: ' + profile.getName());
   console.log('Image URL: ' + profile.getImageUrl());
   console.log('Email: ' + profile.getEmail());
-       document.cookie = "username="+profile.getName()
-       document.cookie = "photo="+profile.getImageUrl()
-       document.cookie = "email="+profile.getEmail()
-       document.cookie = "signedintogoogle=true"
+       document.cookie = "username="+profile.getName()+';'
+       document.cookie = "photo="+profile.getImageUrl()+';'
+       document.cookie = "email="+profile.getEmail()+';'
+       document.cookie = "signedintogoogle=true"+';'
        document.getElementById('confi').innerHTML = 'Auto signing you in...<br><div id="myProgress"><div id="myBar"><div id="label">10%</div></div></div>'
        setTimeout(function(){ move()}, 1000);
 }
