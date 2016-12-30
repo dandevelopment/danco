@@ -152,9 +152,14 @@
 	function getDE() {
 	  window.prompt("Copy to clipboard: Ctrl+C, Enter", document.getElementById('decrypted').value)
 	}
-
+        setInterval(function(){
+		if(document.getElementById('ghf').style.width <'101'){
+	document.getElementById('ghf').style.width++
+		}
+	},1000)
 </script>
 <body style="font-family:Verdana;padding:20px;background-color:white">
+	<div style="height:3px;color:#efefef;margin-bottom:10px;width:100%"><div id="ghf" style="height:3px;color:blue"></div></div>
   <span class="part" style="float:left">
 <span href="#" style="" class="one" onclick="encryptf()">
     <input placeholder="Encrypt" style="border:none;border-bottom:solid;background-color:#efefef;" id="encrypt">
