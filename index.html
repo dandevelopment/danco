@@ -9,14 +9,14 @@
   -webkit-animation-name: animatebottom;
   -webkit-animation-duration: 1s;
   animation-name: animatebottom;
-  animation-duration: 1s
+  animation-duration: 2s
 }
 @-webkit-keyframes animatebottom {
-  from { bottom:-100px; opacity:0 } 
+  from { bottom:-200px; opacity:0 } 
   to { bottom:0px; opacity:1 }
 }
 @keyframes animatebottom { 
-  from{ bottom:-100px; opacity:0 } 
+  from{ bottom:-200px; opacity:0 } 
   to{ bottom:0; opacity:1 }
 }
         .sidenav {
@@ -443,8 +443,8 @@ document.getElementById('prgs').innerHTML = i+'%'
             </div>
                 <div id="youknow">
     <div class="pagee" style="background-color:white;height:2500px;" id="teest">  
-        <div style="border:none;margin-right:0px;background-color:rgba(300, 300, 300, 0.63);padding:20px;display:inline-block;bottom:0;right:0;margin-bottom:0px;position:fixed;color:black;" id="catchf"><i>Don't be stupid.</i><br>-<b>Dan co.</b></div>
-
+        <!--<div style="border:none;margin-right:0px;background-color:rgba(300, 300, 300, 0.63);padding:20px;display:inline-block;bottom:0;right:0;margin-bottom:0px;position:fixed;color:black;" id=""><i>Don't be stupid.</i><br>-<b>Dan co.</b></div>
+-->
         <img src="https://sites.google.com/a/lca.edu/haskins/_/rsrc/1466706330742/home/danAppiconFull.png"style="float:right;margin:10px;width:50%;height:auto"height="500px"width="500px">
 
         
@@ -639,7 +639,7 @@ function closeNav() {
         //    },1000)
             document.getElementById('menutop').contentWindow.postMessage('hello', '*');
             //setInterval(function(){},1000)
-(function($) {
+/*(function($) {
     var element = $('#catchf'),
         originalY = element.offset().top;
 
@@ -658,7 +658,7 @@ function closeNav() {
                     : scrollTop - originalY + topMargin
         }, 500);
     });
-})(jQuery);
+})(jQuery);*/
         $(document).ready(function(){
             zeFunction()
             setTimeout(function() {
