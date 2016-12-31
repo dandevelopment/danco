@@ -2,6 +2,24 @@
 <html>
 <head>
 <title>TEST</title>  
+  <style>.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+</style>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -10,7 +28,7 @@
 <body id="" >
  <script src="https://apis.google.com/js/platform.js" async defer></script>
 <div class="container">
-  <div id="ggh"style="display:none">
+  <div id="ggh"style="display:none"class="animate-bottom">
   <h2>Animated Progress Bar</h2>
   <p>The .active class animates the progress bar:</p></div> 
   <div class="progress" id="prf">
