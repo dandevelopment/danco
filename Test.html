@@ -1,22 +1,30 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>TEST</title>
- <meta name="google-signin-client_id" content="257180149912-7jsbuc0e22qnrpg681cthd7bqm2hn8lr.apps.googleusercontent.com">
+<title>TEST</title>  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
-<body>
+<body id="" >
  <script src="https://apis.google.com/js/platform.js" async defer></script>
- test
- <div class="g-signin2" data-onsuccess="onSignIn"></div>
+<div class="container" id="ggh"style="display:none">
+  <h2>Animated Progress Bar</h2>
+  <p>The .active class animates the progress bar:</p> 
+  <div class="progress" id="prf">
+    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:0%" id="prgs">
+      0%
+    </div>
+  </div>
+</div>
  <script>
- function onSignIn(googleUser) {
-  var profile = googleUser.getBasicProfile();
-  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-  console.log('Name: ' + profile.getName());
-  console.log('Image URL: ' + profile.getImageUrl());
-  console.log('Email: ' + profile.getEmail());
-}
+var i = 00;
+setInterval(function(){if(i<100){i++;
+document.getElementById('prgs').style.width = i + '%';
+document.getElementById('prgs').innerHTML = i+'%'
+}else{  document.getElementById("prf").style.display = "none";
+  document.getElementById("ggh").style.display = "block";}},100)
  </script>
 </body>
 </html>
