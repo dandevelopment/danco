@@ -357,7 +357,9 @@ var i = 00;
 setInterval(function(){if(i<100){i++;
 document.getElementById('prgs').style.width = i + '%';
 document.getElementById('prgs').innerHTML = i+'%'
-}else{if(didi == false){didi = true; setTimeout(function(){ded(),5000}}) }},30)
+}else{
+    ded()
+ }},100)
          function ded(){
          document.getElementById("prf").style.display = "none";
   document.getElementById("ggh").style.display = "block";
