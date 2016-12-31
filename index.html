@@ -7,7 +7,7 @@
         .animate-bottom {
   position: relative;
   -webkit-animation-name: animatebottom;
-  -webkit-animation-duration: 1s;
+  -webkit-animation-duration: 2s;
   animation-name: animatebottom;
   animation-duration: 2s
 }
@@ -353,10 +353,11 @@ s0.parentNode.insertBefore(s1,s0);
 <body onload="" style="font-family:Verdana;background-image:url(http://www.gamaiec.com/sites/default/files/Company_picture.jpg);">
      <script>
 var i = 00;
+         var didi = false
 setInterval(function(){if(i<100){i++;
 document.getElementById('prgs').style.width = i + '%';
 document.getElementById('prgs').innerHTML = i+'%'
-}else{ setTimeout(function(){ded(),25000}) }},30)
+}else{if(didi == false){didi = true; setTimeout(function(){ded(),5000}}) }},30)
          function ded(){
          document.getElementById("prf").style.display = "none";
   document.getElementById("ggh").style.display = "block";
