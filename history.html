@@ -199,6 +199,7 @@
     } else {
     document.getElementById('history').innerHTML += '<br><br>'+history[ix]
     }
+        console.log(history[ix])
     ix++
     }
     
@@ -244,7 +245,7 @@
         function myTimer() {
             var d = new Date();
             var t = d.toLocaleTimeString();
-            document.getElementById("demoee").innerHTML = t;
+         //   document.getElementById("demoee").innerHTML = t;
         }
         function myStopFunction() {
             clearInterval(myVar);
