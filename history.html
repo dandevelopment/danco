@@ -192,17 +192,44 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>
     var ix = 0
-    var ooo = getCookie('bh').split('|')
+    var ooo = getCookie('bh').split('|').reverse()
+    var insertd = ''
+    var unknownd = ''
+    var lastdate = ''
+    var lod = ''
     while(ix<ooo.length){
+        lod = ''
+        if(ooo[ix].split(' > ').length == 1){
+    
+            
     if(ix == 0){
-    document.getElementById('history').innerHTML = ooo[ix]
+        lastdate = ooo[ix].split(' > ')[0].split(', ')[0]+ooo[ix].split(' > ')[0].split(', ')[1]
+    insertd = ooo[ix]
     } else {
-    document.getElementById('history').innerHTML += '<br><br>'+ooo[ix]
+        if(lastdate == ooo[ix].split(' > ')[0].split(', ')[0]+ooo[ix].split(' > ')[0].split(', ')[1]){
+        
+        } else {
+        lod = '<h2>'+ooo[ix].split(' > ')[0].split(', ')[0]+ooo[ix].split(' > ')[0].split(', ')[1]+'</h2>'
+        }
+    insertd += '<br><br>'+lod+ooo[ix]
+        lastdate = ooo[ix].split(' > ')[0].split(', ')[0]+ooo[ix].split(' > ')[0].split(', ')[1]
     }
-        console.log(ooo[ix])
+            console.log(lastdate)
+           } else {
+               if(unknownd == ''){
+               unknownd = '<h1 style="border-bottom:solid;">Unknown Date and Time</h1>'
+               }
+               if(ix == 0){
+    unknownd = ooo[ix]
+    } else {
+    unknownd += '<br><br>'+ooo[ix]
+    }
+           }
+    //console.log(ooo[ix])
     ix++
     }
-    
+    document.getElementById('history').innerHTML = insertd
+        document.getElementById('history').innerHTML = unknownd
     
     
     
