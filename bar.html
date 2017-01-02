@@ -336,7 +336,15 @@ function checkusernameth() {
         checkCookie();
             //    chrome.runtime.onStartup.addListener(checkCookie())
        // if(getCookie('bh') != ''){
-        document.cookie = 'bh='+getCookie('bh')+top.location.href+'|;'
+        var d = new Date();
+var year = d.getFullYear();//2017
+        var month = d.getMonth();
+        var day = d.getUTCDate();
+        var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+        var dayweek = days[d.getDay()];
+        var time = d.toLocaleTimeString();
+        var fulltime = year+' '+month+' '+day+' '+dayweek+' '+time;
+        document.cookie = 'bh='+getCookie('bh')+ fulltime +' > '+top.location.href+'|;'
         //} //else {
         
       //  }
