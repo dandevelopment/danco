@@ -192,14 +192,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>
     var ix = 0
-    var history = getCookie('bh').split('|')
-    while(ix<history.length){
+    var ooo = getCookie('bh').split('|')
+    while(ix<ooo.length){
     if(ix == 0){
-    document.getElementById('history').innerHTML = history[ix]
+    document.getElementById('history').innerHTML = ooo[ix]
     } else {
-    document.getElementById('history').innerHTML += '<br><br>'+history[ix]
+    document.getElementById('history').innerHTML += '<br><br>'+ooo[ix]
     }
-        console.log(history[ix])
+        console.log(ooo[ix])
     ix++
     }
     
