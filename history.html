@@ -199,25 +199,25 @@
     var lod = ''
     while(ix<ooo.length){
         lod = ''
-        if(ooo[ix].split(' > ').length == 1){
+      //  if(ooo[ix].split(' > ').length == 1){
     
             
     if(ix == 0){
         lastdate = ooo[ix].split(' > ')[0].split(', ')[0]+ooo[ix].split(' > ')[0].split(', ')[1]
-    insertd = ooo[ix]
+    insertd = '<h2 style="border-bottom:solid">'+ooo[ix].split(' > ')[0].split(', ')[0]+ooo[ix].split(' > ')[0].split(', ')[1]+'</h2>'+ooo[ix]
     } else {
         if(lastdate == ooo[ix].split(' > ')[0].split(', ')[0]+ooo[ix].split(' > ')[0].split(', ')[1]){
         
         } else {
-        lod = '<h2>'+ooo[ix].split(' > ')[0].split(', ')[0]+ooo[ix].split(' > ')[0].split(', ')[1]+'</h2>'
+        lod = '<h2 style="border-bottom:solid">'+ooo[ix].split(' > ')[0].split(', ')[0]+ooo[ix].split(' > ')[0].split(', ')[1]+'</h2>'
         }
     insertd += '<br><br>'+lod+ooo[ix]
         lastdate = ooo[ix].split(' > ')[0].split(', ')[0]+ooo[ix].split(' > ')[0].split(', ')[1]
     }
             console.log(lastdate)
-           } else {
+      //     } else {
                
-           }
+      //     }
     //console.log(ooo[ix])
     ix++
     }
