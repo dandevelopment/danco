@@ -191,28 +191,33 @@
      </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>
-    var ix = 0
-    var ooo = getCookie('bh').split('|').reverse()
-    var insertd = ''
-    var unknownd = ''
-     var lastdate = ''
+            var ix = 0
+        var ooo = getCookie('bh').split('|').reverse()
+        var insertd = ''
+        var unknownd = ''
+        var lastdate = ''
         var lodee = ''
+        var savedate = ''
+        var splitdate = ''
+        var paged = ''
         while (ix < ooo.length) {
             lodee = ''
             //  if(ooo[ix].split(' > ').length == 1){
-
-
+            splitdate = ooo[ix].split(' > ')[0].split(', ')
+            savedate = splitdate[0]+' '+splitdate[1]
+            paged = splitdate[2]
             if (ix == 0) {
-                lastdate = ooo[ix].split(' > ')[0].split(', ')[0] + ooo[ix].split(' > ')[0].split(', ')[1]
-                insertd = '<h2 style="border-bottom:solid">' + ooo[ix].split(' > ')[0].split(', ')[0] + ooo[ix].split(' > ')[0].split(', ')[1] + '</h2>' + ooo[ix]
+                lastdate = savedate//ooo[ix].split(' > ')[0].split(', ')[0] + ooo[ix].split(' > ')[0].split(', ')[1]
+                insertd = '<h2 style="border-bottom:solid">' + savedate + '</h2>'//ooo[ix].split(' > ')[0].split(', ')[0] + ooo[ix].split(' > ')[0].split(', ')[1] + '</h2>' + ooo[ix]
+                insertd += '' + paged
             } else {
-                if (lastdate == ooo[ix].split(' > ')[0].split(', ')[0] + ooo[ix].split(' > ')[0].split(', ')[1]) {
+                if (lastdate == savedate) {
 
                 } else {
-                    lodee = '<h2 style="border-bottom:solid">' + ooo[ix].split(' > ')[0].split(', ')[0] + ooo[ix].split(' > ')[0].split(', ')[1] + '</h2>'
+                    insertd += '<h2 style="border-bottom:solid">' + savedate + '</h2>'//ooo[ix].split(' > ')[0].split(', ')[0] + ooo[ix].split(' > ')[0].split(', ')[1] + '</h2>'
                 }
-                insertd += '<br><br>' + lodee + ooo[ix]
-                lastdate = ooo[ix].split(' > ')[0].split(', ')[0] + ooo[ix].split(' > ')[0].split(', ')[1]
+                insertd += '<br><br>' + paged
+                lastdate = savedate
             }
             console.log(lastdate)
             //     } else {
@@ -222,7 +227,7 @@
             ix++
         }
     document.getElementById('history').innerHTML = insertd
-        document.getElementById('history').innerHTML = unknownd
+       // document.getElementById('history').innerHTML = unknownd
     
     
     
