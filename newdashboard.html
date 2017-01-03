@@ -208,6 +208,7 @@
   <div style="position:absolute;left:0;width:30%;box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);background-color:#efefef;height:100%">
     <h1 style="color:white;background-color:cornflowerblue;padding-top:10px;padding-bottom:10px;">Dan co. Dashboard</h1>
     <div style="padding:25px;">
+		<div style="font-size:15px" id="usr"></div>
       <div style="height:200px;width:100%">
         <img id="pro" style="width:100%;height:100%;object-fit: cover;" src="http://www.agathame.com/media/testimonials//f/a/facebook-default-no-profile-pic_3.jpg" />
       </div>
@@ -242,8 +243,10 @@
 
 
 
+
           <script>
-//if(getCookie('username') == ''){alert("You aren't logged in!");window.location.assign("Login.html");}
+if(getCookie('username') == ''){alert("You aren't logged in!");window.location.assign("Login.html");}
+document.getElementById('usr').innerHTML = getCookie('username')
 var al = document.getElementById("uploader");
  var a = document.getElementById("file_upload");
  al.addEventListener("click", function(e) {
@@ -327,6 +330,7 @@ var al = document.getElementById("uploader");
 			 document.getElementById('bribes').innerHTML = getCookie('bribes')
 			 },1000)
 }
+
 
 </script>
 </html>
