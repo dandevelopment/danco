@@ -195,32 +195,32 @@
     var ooo = getCookie('bh').split('|').reverse()
     var insertd = ''
     var unknownd = ''
-    var lastdated = ''
-    var lodee = ''
-    while(ix<ooo.length){
-        lodee = ''
-      //  if(ooo[ix].split(' > ').length == 1){
-    
-            
-    if(ix == 0){
-        lastdated = ooo[ix].split(' > ')[0].split(', ')[0]+ooo[ix].split(' > ')[0].split(', ')[1]
-    insertd = '<h2 style="border-bottom:solid">'+ooo[ix].split(' > ')[0].split(', ')[0]+ooo[ix].split(' > ')[0].split(', ')[1]+'</h2>'+ooo[ix]
-    } else {
-        if(lastdated == ooo[ix].split(' > ')[0].split(', ')[0]+ooo[ix].split(' > ')[0].split(', ')[1]){
-        
-        } else {
-        lod = '<h2 style="border-bottom:solid">'+ooo[ix].split(' > ')[0].split(', ')[0]+ooo[ix].split(' > ')[0].split(', ')[1]+'</h2>'
+     var lastdate = ''
+        var lodee = ''
+        while (ix < ooo.length) {
+            lodee = ''
+            //  if(ooo[ix].split(' > ').length == 1){
+
+
+            if (ix == 0) {
+                lastdate = ooo[ix].split(' > ')[0].split(', ')[0] + ooo[ix].split(' > ')[0].split(', ')[1]
+                insertd = '<h2 style="border-bottom:solid">' + ooo[ix].split(' > ')[0].split(', ')[0] + ooo[ix].split(' > ')[0].split(', ')[1] + '</h2>' + ooo[ix]
+            } else {
+                if (lastdate == ooo[ix].split(' > ')[0].split(', ')[0] + ooo[ix].split(' > ')[0].split(', ')[1]) {
+
+                } else {
+                    lodee = '<h2 style="border-bottom:solid">' + ooo[ix].split(' > ')[0].split(', ')[0] + ooo[ix].split(' > ')[0].split(', ')[1] + '</h2>'
+                }
+                insertd += '<br><br>' + lodee + ooo[ix]
+                lastdate = ooo[ix].split(' > ')[0].split(', ')[0] + ooo[ix].split(' > ')[0].split(', ')[1]
+            }
+            console.log(lastdate)
+            //     } else {
+
+            //     }
+            //console.log(ooo[ix])
+            ix++
         }
-    insertd += '<br><br>'+lod+ooo[ix]
-        lastdated = ooo[ix].split(' > ')[0].split(', ')[0]+ooo[ix].split(' > ')[0].split(', ')[1]
-    }
-            console.log(lastdated)
-      //     } else {
-               
-      //     }
-    //console.log(ooo[ix])
-    ix++
-    }
     document.getElementById('history').innerHTML = insertd
         document.getElementById('history').innerHTML = unknownd
     
