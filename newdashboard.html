@@ -213,7 +213,8 @@
       </div>
       <input style="position:absolute;display:none" type="file" id="file_upload" onchange="Chp(this.files)" />
       <a href="#" id="uploader" class="button">Change</a>
-			<div style="margin:5%;height:10px;border-radius:10px;width:90%;background-color:#717171"><div style="height:100%;width:0%;border-radius:10px;background-color:cornflowerblue"id="bribes"></div></div>
+			<p style="padding:5px;">Dan Bribes</p>
+			<div style="margin:5%;height:30px;border-radius:10px;width:90%;background-color:#717171"><div style="height:100%;width:0%;border-radius:10px;background-color:cornflowerblue;color:white;text-align:center;"id="bribes"></div></div>
     </div>
   </div>
   <div class="itemz" style="width:50%" id="visitreward">
@@ -226,12 +227,24 @@
       <a href="" onclick="collectreward('visit')" class="button">Collect</a>
     </div>
   </div>
+	<div class="itemz" style="width:50%" id="visitreward">
+    <div class="tpof" style="background:cornflowerblue">
+      Happy Newyear!
+    </div>
+		<img style="width:100px;float:left;margin:5px" src="http://4vector.com/i/free-vector-new-year-icon_101905_New_Year_Icon.png">
+    <div style="margin:7%;width:93%">
+       Happy newyear from Dan co, and a merry christmas! Check out our special christmas commercial!
+      <a href="Theatre.html" onclick="" class="button">Watch</a>
+    </div>
+  </div>
 </body>
 
 
 
+
           <script>
- var al = document.getElementById("uploader");
+//if(getCookie('username') == ''){alert("You aren't logged in!");window.location.assign("Login.html");}
+var al = document.getElementById("uploader");
  var a = document.getElementById("file_upload");
  al.addEventListener("click", function(e) {
    if (a) {
@@ -239,7 +252,6 @@
    }
    e.preventDefault();
  }, false);
-
  function Chp(file) {
    var img = document.getElementById('pro');
    /*var imgType = /^image\//;
@@ -255,9 +267,10 @@
  setInterval(function() {
    if (getCookie('setimg') != "") {
      document.getElementById('pro').src = getCookie('setimg')
+   } else if (getCookie('photo') != "") {
+     document.getElementById('pro').src = getCookie('photo')
    }
  }, 1000)
-
  function getCookie(cname) {
    var name = cname + "=";
    var ca = document.cookie.split(';');
@@ -272,15 +285,12 @@
    }
    return "";
  }
-
  function collectreward(type) {
    if (type == "visit") {
      document.cookie = 'collectreward_visit=true;'
 		 document.cookie = 'bribes='+Number(getCookie('bribes'))+7
    }
    if (type == 'streak') {
-
-
    }
  }
  var carryover = false
@@ -290,6 +300,11 @@
            
 				 }
        }, 1000)
+			 if(getCookie('bribes')==""){
+			 setTimeout(function(){alert('You have been awarded 10 Dan bribes!')
+			 document.cookie='bribes=10;'
+			 },10000)
+			 }
 			 var target = getCookie('bribes')
 			 var ide = 0
 			 setInterval(function(){
@@ -304,7 +319,7 @@
 			 }
 			 
 			 },100)
-			 setTimeout(doit,10000)
+			 setTimeout(doit,15000)
 			 function doit(){
 			 crryover = true
 			 setInterval(function(){
@@ -312,5 +327,6 @@
 			 document.getElementById('bribes').innerHTML = getCookie('bribes')
 			 },1000)
 }
+
 </script>
 </html>
