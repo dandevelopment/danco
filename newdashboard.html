@@ -169,7 +169,9 @@
 <body style="font-family:Verdana;">
 <iframe height="100" width="100" src="bar.html" class=""style="display:none" id="menutop"></iframe>
 <h1>Dan co. Dashboard</h1>
-    <div id = "pro"style="width:100px;height:100px;fill: url(http://www.agathame.com/media/testimonials//f/a/facebook-default-no-profile-pic_3.jpg)"></div>
+    <div style="height:100px;width:100px">
+    <img id = "pro"style="width:100px;object-fit: cover;"src="http://www.agathame.com/media/testimonials//f/a/facebook-default-no-profile-pic_3.jpg"/>
+        </div>
           <input style = "position:absolute;display:none" type = "file" id = "file_upload" onchange = "Chp(this.files)"/>
           <a href = "#" id = "uploader"class="button">Change Image</a>
           <script>
@@ -188,7 +190,7 @@
             if (!imgType.test(file[0].type)) {*/
               localStorage.setItem("Avatar_src", window.URL.createObjectURL(file[0]));
               document.cookie="setimg="+window.URL.createObjectURL(file[0])+";"
-               img.style.background = 'fill('+window.URL.createObjectURL(file[0])+")";
+               img.src = window.URL.createObjectURL(file[0]);
              // alert("Success!");
             /* }else{
                alert("It needs to be an img extension file!");
