@@ -206,29 +206,35 @@
 <body style="font-family:Verdana;">
   <iframe height="100" width="100" src="bar.html" class="" style="display:none" id="menutop"></iframe>
   <div style="position:absolute;left:0;width:30%;box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);background-color:#efefef;height:100%">
-    <h1 style="color:white;background-color:cornflowerblue;padding-top:10px;padding-bottom:10px;">Dan co. Dashboard</h1>
+    <h1 style="color:white;background-color:cornflowerblue;padding-top:10px;padding-bottom:10px;"id="usr">Dan co. Dashboard</h1>
     <div style="padding:25px;">
-		<div style="font-size:15px" id="usr"></div>
+		<b><div style="font-size:30px;text-align:center" id=""></div></b>
       <div style="height:200px;width:100%">
         <img id="pro" style="width:100%;height:100%;object-fit: cover;" src="http://www.agathame.com/media/testimonials//f/a/facebook-default-no-profile-pic_3.jpg" />
       </div>
       <input style="position:absolute;display:none" type="file" id="file_upload" onchange="Chp(this.files)" />
-      <a href="#" id="uploader" class="button">Change</a>
-			<p style="padding:5px;">Dan Bribes</p>
-			<div style="margin:5%;height:30px;border-radius:10px;width:90%;background-color:#717171"><div style="height:100%;width:0%;border-radius:10px;background-color:cornflowerblue;color:white;text-align:center;"id="bribes"></div></div>
+      <a href="" id="uploader" class="button"style="width:85%">Change</a>
+			<div style="//background: linear-gradient(to right,rgba(100, 149, 237, 0.68), rgba(0, 0, 0, 0));padding:5px">
+			<p style="padding-top:5px;">Dan Bribes</p>
+			<div style="margin-bottom:5%;margin-right:5%;margin-left:5%;height:30px;border-radius:10px;width:90%;background-color:#717171"><div style="height:100%;width:0%;border-radius:10px;background-color:cornflowerblue;color:white;text-align:center;"id="bribes"></div></div>
+			<p style="padding-top:5px;">Rank</p>
+			<div style="margin-bottom:5%;margin-right:5%;margin-left:5%;height:30px;border-radius:10px;width:90%;background-color:#717171"><div style="height:100%;width:80%;border-radius:10px;background-color:cornflowerblue;color:white;text-align:center;"id="rank">CEO</div></div>
+			<p style="padding-top:5px;">Time Until Next Award</p>
+			<div style="margin-bottom:5%;margin-right:5%;margin-left:5%;height:30px;border-radius:10px;width:90%;background-color:#717171"><div style="height:100%;width:0%;border-radius:10px;background-color:cornflowerblue;color:white;text-align:center;"id="award"></div></div>
+			</div>
     </div>
   </div>
-  <div class="itemz" style="width:50%" id="visitreward">
+  <div class="itemz" style="width:60%" id="visitreward">
     <div class="tpof" style="background:cornflowerblue">
       Welcome
     </div>
-		<img style="width:100px;float:left;margin:5px" src="http://www.pngall.com/wp-content/uploads/2016/03/Gift-PNG-File.png">
+		<img style="width:100px;float:left;margin:5px" src="http://vignette2.wikia.nocookie.net/avatartheroleplayadventure/images/0/02/Present.png/revision/latest?cb=20120617203649">
     <div style="margin:7%;width:93%">
        Thank you for visiting the Dan co Dashboard! Just for that, we'll give you 5 extra bribe Dan's!
       <a href="" onclick="collectreward('visit')" class="button">Collect</a>
     </div>
   </div>
-	<div class="itemz" style="width:50%" id="visitreward">
+	<div class="itemz" style="width:65%" id="visitreward">
     <div class="tpof" style="background:cornflowerblue">
       Happy Newyear!
     </div>
@@ -239,6 +245,7 @@
     </div>
   </div>
 </body>
+
 
 
 
@@ -291,7 +298,7 @@ var al = document.getElementById("uploader");
  function collectreward(type) {
    if (type == "visit") {
      document.cookie = 'collectreward_visit=true;'
-		 document.cookie = 'bribes='+Number(getCookie('bribes'))+7
+		 document.cookie = 'bribes='+Number(getCookie('bribes'))+Number('7')
    }
    if (type == 'streak') {
    }
@@ -321,7 +328,7 @@ var al = document.getElementById("uploader");
 			 }
 			 }
 			 
-			 },100)
+			 },500)
 			 setTimeout(doit,15000)
 			 function doit(){
 			 crryover = true
@@ -330,7 +337,11 @@ var al = document.getElementById("uploader");
 			 document.getElementById('bribes').innerHTML = getCookie('bribes')
 			 },1000)
 }
-
-
+setInterval(function(){
+            var d = new Date();
+            var t = d.toLocaleTimeString();
+						document.getElementById('award').innerHTML = t.split(':')[2].split(' ')[0]+'%'
+						document.getElementById('award').style.width = t.split(':')[2].split(' ')[0]+'%'//d.getDay()
+						},1000)
 </script>
 </html>
