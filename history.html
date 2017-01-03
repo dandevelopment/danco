@@ -200,12 +200,18 @@
         var savedate = ''
         var splitdate = ''
         var paged = ''
+        var aed = ''
         while (ix < ooo.length) {
             lodee = ''
             //  if(ooo[ix].split(' > ').length == 1){
+            aed = ooo[ix].split('> ')
+            console.log('aed '+aed)
             splitdate = ooo[ix].split(' > ')[0].split(', ')
+            console.log('splitdate '+splitdate)
             savedate = splitdate[0]+' '+splitdate[1]
-            paged = splitdate[2]
+            console.log('savedate '+savedate)
+            paged = aed[1]
+            console.log('paged '+paged)
             if (ix == 0) {
                 lastdate = savedate//ooo[ix].split(' > ')[0].split(', ')[0] + ooo[ix].split(' > ')[0].split(', ')[1]
                 insertd = '<h2 style="border-bottom:solid">' + savedate + '</h2>'//ooo[ix].split(' > ')[0].split(', ')[0] + ooo[ix].split(' > ')[0].split(', ')[1] + '</h2>' + ooo[ix]
