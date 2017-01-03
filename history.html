@@ -202,9 +202,10 @@
         var paged = ''
         var aed = ''
 
-       
+       var splitcomma = ''
         while (ix < ooo.length) {
-            insertd += ooo[ix]
+            splitcomma = ooo[ix].split(',')
+            insertd += splitcomma[0]+splitcomma[1]+'<br><br>'
 
             /*
             lodee = ''
