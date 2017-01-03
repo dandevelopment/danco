@@ -191,7 +191,7 @@
      </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>
-           var ix = 0
+           var ix = 1
         var ooo = getCookie('bh').split('|').reverse()
         var insertd = ''
         var unknownd = ''
@@ -204,7 +204,7 @@
 var pagename = ''
        var splitcomma = ''
        var splitlarger = ''
-        while (ix+1 < ooo.length) {
+        while (ix < ooo.length) {
             splitcomma = ooo[ix].split(',')
             splitlarger = ooo[ix].split('>')
             pagename = splitlarger[1].split('/').length
