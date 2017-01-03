@@ -201,12 +201,13 @@
         var splitdate = ''
         var paged = ''
         var aed = ''
-
+var pagename = ''
        var splitcomma = ''
         while (ix < ooo.length) {
             splitcomma = ooo[ix].split(',')
             splitlarger = ooo[ix].split('>')
-            insertd += splitcomma[0]+splitcomma[1]+'<br>'
+            pagename = splitlarger.split('/').length
+            insertd += splitcomma[0]+splitcomma[1]+' <span style="color:white">hf</span> '+pagename+'<br>'
             insertd += '<span style="color:grey">'+splitlarger[1]+'</span><br><br>'
 
             /*
