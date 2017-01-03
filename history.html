@@ -209,7 +209,7 @@ var pagename = ''
             splitcomma = ooo[ix].split(',')
             splitlarger = ooo[ix].split('>')
             fpagename = splitlarger[1].split('/')//.length
-            pagename = fpagename[fpagename.length]
+            pagename = fpagename[fpagename.length-1]
             insertd += splitcomma[0]+splitcomma[1]+' <span style="color:white">hf</span> '+pagename+'<br>'
             insertd += '<span style="color:grey">'+splitlarger[1]+'</span><br><br>'
 
