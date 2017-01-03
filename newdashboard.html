@@ -4,7 +4,7 @@
     <title>Dan Enterprises - Home</title>
     <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'/ >
     <style>
-               .titla {
+        .titla {
           background-color: #0094ff;
           color: white;
           box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -194,7 +194,9 @@
           height: 20px;
           //padding: 20px;
 					padding-top:10px;
-          width: 100%;
+					padding-bottom:10px;
+					padding-left:10%;
+          width: 90%;
           color: white;
           font-size: 20px;
         }
@@ -211,55 +213,72 @@
     <input style="position:absolute;display:none" type="file" id="file_upload" onchange="Chp(this.files)" />
     <a href="#" id="uploader" class="button">Change Image</a>
   </div>
-  <div class="itemz" style="width:50%">
+  <div class="itemz" style="width:50%" id="visitreward">
     <div class="tpof" style="background:cornflowerblue">
       Welcome
     </div>
 		<div style="margin:7%;width:93%">
-		<img src="https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwi31eWNlabRAhUHOSYKHWl_Aw8QjRwIBw&url=http%3A%2F%2Favatartheroleplayadventure.wikia.com%2Fwiki%2FFile%3APresent.png">
+		<img style="width:100px;float:left" src="http://www.pngall.com/wp-content/uploads/2016/03/Gift-PNG-File.png">
 		Thank you for visitiong the Dan co Dashboard! Just for that, we'll give you 5 extra bribe Dan's!
-		<a href="" onclick="collectreward(visit)"class="button">Collect</a>
+		<a href="" onclick="collectreward('visit')"class="button">Collect</a>
 		</div>
   </div>
 </body>
 
+
           <script>
-           var al = document.getElementById("uploader");
-           var a = document.getElementById("file_upload");
-            al.addEventListener("click", function(e){
-              if(a){
-                a.click();
-              }
-              e.preventDefault();
-            },false);
-            
-          function Chp(file){
-            var img = document.getElementById('pro');
-            /*var imgType = /^image\//;
-            if (!imgType.test(file[0].type)) {*/
-              localStorage.setItem("Avatar_src", window.URL.createObjectURL(file[0]));
-              document.cookie="setimg="+window.URL.createObjectURL(file[0])+";"
-               img.src = window.URL.createObjectURL(file[0]);
-             // alert("Success!");
-            /* }else{
-               alert("It needs to be an img extension file!");
-             }*/
-          }
-    </script>
-<script>
-function getCookie(cname) {
-            var name = cname + "=";
-            var ca = document.cookie.split(';');
-            for (var i = 0; i < ca.length; i++) {
-                var c = ca[i];
-                while (c.charAt(0) == ' ') {
-                    c = c.substring(1);
-                }
-                if (c.indexOf(name) == 0) {
-                    return c.substring(name.length, c.length);
-                }
-            }
-            return "";
-        }
+          var al = document.getElementById("uploader");
+ var a = document.getElementById("file_upload");
+ al.addEventListener("click", function(e) {
+   if (a) {
+     a.click();
+   }
+   e.preventDefault();
+ }, false);
+
+ function Chp(file) {
+   var img = document.getElementById('pro');
+   /*var imgType = /^image\//;
+   if (!imgType.test(file[0].type)) {*/
+   localStorage.setItem("Avatar_src", window.URL.createObjectURL(file[0]));
+   document.cookie = "setimg=" + window.URL.createObjectURL(file[0]) + ";"
+   img.src = window.URL.createObjectURL(file[0]);
+   // alert("Success!");
+   /* }else{
+      alert("It needs to be an img extension file!");
+    }*/
+ }
+setInterval(function(){
+if(getCookie('setimg')!=""){
+document.getElementById('pro').src = getCookie('setimg')
+}
+},1000)
+ function getCookie(cname) {
+   var name = cname + "=";
+   var ca = document.cookie.split(';');
+   for (var i = 0; i < ca.length; i++) {
+     var c = ca[i];
+     while (c.charAt(0) == ' ') {
+       c = c.substring(1);
+     }
+     if (c.indexOf(name) == 0) {
+       return c.substring(name.length, c.length);
+     }
+   }
+   return "";
+ }
+function collectreward(type){
+  if(type=="visit"){
+	  document.cookie='collectreward_visit=true;'
+	}
+	if(type == 'streak'){
+	
+	
+	}
+}
+if(getCookie('collectreward_visit'){
+document.getElementById('visitreward').style.display = 'none'
+}
+
 </script>
 </html>
