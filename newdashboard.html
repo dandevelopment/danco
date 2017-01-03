@@ -227,7 +227,7 @@
 
 
           <script>
-          var al = document.getElementById("uploader");
+ var al = document.getElementById("uploader");
  var a = document.getElementById("file_upload");
  al.addEventListener("click", function(e) {
    if (a) {
@@ -276,9 +276,11 @@ function collectreward(type){
 	
 	}
 }
-if(getCookie('collectreward_visit'){
+setInterval(function(){
+if(getCookie('collectreward_visit'=='true'){
 document.getElementById('visitreward').style.display = 'none'
 }
+},1000)
 
 </script>
 </html>
