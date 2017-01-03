@@ -207,7 +207,7 @@ var pagename = ''
         while (ix < ooo.length) {
             splitcomma = ooo[ix].split(',')
             splitlarger = ooo[ix].split('>')
-            pagename = splitlarger.split('/').length
+            pagename = splitlarger[1].split('/').length
             insertd += splitcomma[0]+splitcomma[1]+' <span style="color:white">hf</span> '+pagename+'<br>'
             insertd += '<span style="color:grey">'+splitlarger[1]+'</span><br><br>'
 
