@@ -205,25 +205,29 @@
 </head>
 <body style="font-family:Verdana;">
   <iframe height="100" width="100" src="bar.html" class="" style="display:none" id="menutop"></iframe>
-  <div style="position:absolute;left:0;width:30%;box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);background-color:#efefef;padding:25px;height:100%">
-    <h1>Dan co. Dashboard</h1>
-    <div style="height:200px;width:100%">
-      <img id="pro" style="width:100%;height:100%;object-fit: cover;" src="http://www.agathame.com/media/testimonials//f/a/facebook-default-no-profile-pic_3.jpg" />
+  <div style="position:absolute;left:0;width:30%;box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);background-color:#efefef;height:100%">
+    <h1 style="color:white;background-color:cornflowerblue;padding-top:10px;padding-bottom:10px;">Dan co. Dashboard</h1>
+    <div style="padding:25px;">
+      <div style="height:200px;width:100%">
+        <img id="pro" style="width:100%;height:100%;object-fit: cover;" src="http://www.agathame.com/media/testimonials//f/a/facebook-default-no-profile-pic_3.jpg" />
+      </div>
+      <input style="position:absolute;display:none" type="file" id="file_upload" onchange="Chp(this.files)" />
+      <a href="#" id="uploader" class="button">Change</a>
+			<div style="margin:5%;height:10px;border-radius:10px;width:90%;background-color:#717171"><div style="height:100%;width:0%;border-radius:10px;background-color:cornflowerblue"id="bribes"></div></div>
     </div>
-    <input style="position:absolute;display:none" type="file" id="file_upload" onchange="Chp(this.files)" />
-    <a href="#" id="uploader" class="button">Change Image</a>
   </div>
   <div class="itemz" style="width:50%" id="visitreward">
     <div class="tpof" style="background:cornflowerblue">
       Welcome
     </div>
-		<div style="margin:7%;width:93%">
-		<img style="width:100px;float:left" src="http://www.pngall.com/wp-content/uploads/2016/03/Gift-PNG-File.png">
-		Thank you for visitiong the Dan co Dashboard! Just for that, we'll give you 5 extra bribe Dan's!
-		<a href="" onclick="collectreward('visit')"class="button">Collect</a>
-		</div>
+		<img style="width:100px;float:left;margin:5px" src="http://www.pngall.com/wp-content/uploads/2016/03/Gift-PNG-File.png">
+    <div style="margin:7%;width:93%">
+       Thank you for visiting the Dan co Dashboard! Just for that, we'll give you 5 extra bribe Dan's!
+      <a href="" onclick="collectreward('visit')" class="button">Collect</a>
+    </div>
   </div>
 </body>
+
 
 
           <script>
@@ -248,11 +252,12 @@
       alert("It needs to be an img extension file!");
     }*/
  }
-setInterval(function(){
-if(getCookie('setimg')!=""){
-document.getElementById('pro').src = getCookie('setimg')
-}
-},1000)
+ setInterval(function() {
+   if (getCookie('setimg') != "") {
+     document.getElementById('pro').src = getCookie('setimg')
+   }
+ }, 1000)
+
  function getCookie(cname) {
    var name = cname + "=";
    var ca = document.cookie.split(';');
@@ -267,20 +272,45 @@ document.getElementById('pro').src = getCookie('setimg')
    }
    return "";
  }
-function collectreward(type){
-  if(type=="visit"){
-	  document.cookie='collectreward_visit=true;'
-	}
-	if(type == 'streak'){
-	
-	
-	}
-}
-setInterval(function(){
-if(getCookie('collectreward_visit')=='true'){
-document.getElementById('visitreward').style.display = 'none'
-}
-},1000)
 
+ function collectreward(type) {
+   if (type == "visit") {
+     document.cookie = 'collectreward_visit=true;'
+		 document.cookie = 'bribes='+Number(getCookie('bribes'))+7
+   }
+   if (type == 'streak') {
+
+
+   }
+ }
+ var carryover = false
+ setInterval(function() {
+       if (getCookie('collectreward_visit' == 'true') {
+           document.getElementById('visitreward').style.display = 'none'
+           
+				 }
+       }, 1000)
+			 var target = getCookie('bribes')
+			 var ide = 0
+			 setInterval(function(){
+			 
+			 if(carryover == false){
+			 document.getElementById('bribes').style.width=getCookie('bribes')+'%'
+			 document.getElementById('bribes').innerHTML = getCookie('bribes')
+			 ide++
+			 if(ide > Number(getCookie('bribes'))||ide == Number(getCookie('bribes')){
+			 carryover = true
+			 }
+			 }
+			 
+			 },100)
+			 setTimeout(doit,10000)
+			 function doit(){
+			 crryover = true
+			 setInterval(function(){
+			 document.getElementById('bribes').style.width=getCookie('bribes')+'%'
+			 document.getElementById('bribes').innerHTML = getCookie('bribes')
+			 },1000)
+}
 </script>
 </html>
