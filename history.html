@@ -203,9 +203,11 @@
         var aed = ''
 
        var splitcomma = ''
-        while (ix < ooo.length) {
+        while (ix+1 < ooo.length) {
             splitcomma = ooo[ix].split(',')
-            insertd += splitcomma[0]+splitcomma[1]+'<br><br>'
+            splitlarger = ooo[ix].split('>')
+            insertd += splitcomma[0]+splitcomma[1]+'<br>'
+            insertd += '<span style="color:grey">'+splitlarger[1]+'</span><br><br>'
 
             /*
             lodee = ''
