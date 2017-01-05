@@ -219,7 +219,7 @@
 			<div style="margin-bottom:5%;margin-right:5%;margin-left:5%;height:30px;border-radius:10px;width:90%;background-color:#717171"><div style="height:100%;width:0%;border-radius:10px;background-color:cornflowerblue;color:white;text-align:center;"id="bribes"></div></div>
 			<p style="padding-top:5px;">Rank</p>
 			<div style="margin-bottom:5%;margin-right:5%;margin-left:5%;height:30px;border-radius:10px;width:90%;background-color:#717171"><div style="height:100%;width:80%;border-radius:10px;background-color:cornflowerblue;color:white;text-align:center;"id="rank">CEO</div></div>
-			<p style="padding-top:5px;">Time Until Next Award</p>
+			<p style="padding-top:5px;">Time to Next Award</p>
 			<div style="margin-bottom:5%;margin-right:5%;margin-left:5%;height:30px;border-radius:10px;width:90%;background-color:#717171"><div style="height:100%;width:0%;border-radius:10px;background-color:cornflowerblue;color:white;text-align:center;"id="award"></div></div>
 			</div>
     </div>
@@ -243,7 +243,40 @@
        Happy newyear from Dan co, and a merry christmas! Check out our special christmas commercial!
       <a href="Theatre.html" onclick="" class="button">Watch</a>
     </div>
+		</div>
+		<div style="width:70%;float:right;">
+	 <div class="itemz" style="width:25%" id="visitreward">
+    <div class="tpof" style="background:cornflowerblue">
+      Randomizer
+    </div>
+		<img style="width:100px;float:left;margin:5px" src="https://cdn4.iconfinder.com/data/icons/defaulticon/icons/png/256x256/media-shuffle.png">
+    <div style="margin:7%;width:93%">
+       Dan co Member feature
+      <a href="random.html" onclick="" class="button">Start</a>
+    </div>
+		
   </div>
+	<div class="itemz" style="width:25%" id="visitreward">
+    <div class="tpof" style="background:cornflowerblue">
+      Encryptor
+    </div>
+		<img style="width:100px;float:left;margin:5px" src="http://simpleicon.com/wp-content/uploads/mail-encryption.png">
+    <div style="margin:7%;width:93%">
+       Dan co Member feature
+      <a href="DanSecure.html" onclick="" class="button">Start</a>
+    </div>
+  </div>
+		<div class="itemz" style="width:25%" id="visitreward">
+    <div class="tpof" style="background:cornflowerblue">
+      Zipper
+    </div>
+		<img style="width:100px;float:left;margin:5px" src="https://d30y9cdsu7xlg0.cloudfront.net/png/44144-200.png">
+    <div style="margin:7%;width:93%">
+       Dan co Member feature
+      <a href="zip.html" onclick="" class="button">Start</a>
+    </div>
+  </div>
+	</div>
 </body>
 
 
@@ -286,6 +319,40 @@ var al = document.getElementById("uploader");
    var ca = document.cookie.split(';');
    for (var i = 0; i < ca.length; i++) {
      var c = ca[i];
+//if(getCookie('username') == ''){alert("You aren't logged in!");window.location.assign("Login.html");}
+document.getElementById('usr').innerHTML = getCookie('username')
+var al = document.getElementById("uploader");
+ var a = document.getElementById("file_upload");
+ al.addEventListener("click", function(e) {
+   if (a) {
+     a.click();
+   }
+   e.preventDefault();
+ }, false);
+ function Chp(file) {
+   var img = document.getElementById('pro');
+   /*var imgType = /^image\//;
+   if (!imgType.test(file[0].type)) {*/
+   localStorage.setItem("Avatar_src", window.URL.createObjectURL(file[0]));
+   document.cookie = "setimg=" + window.URL.createObjectURL(file[0]) + ";"
+   img.src = window.URL.createObjectURL(file[0]);
+   // alert("Success!");
+   /* }else{
+      alert("It needs to be an img extension file!");
+    }*/
+ }
+ setTimeout(function() {
+   if (getCookie('setimg') != "") {
+     document.getElementById('pro').src = getCookie('setimg')
+   } else if (getCookie('photo') != "") {
+     document.getElementById('pro').src = getCookie('photo')
+   }
+ },2000)
+ function getCookie(cname) {
+   var name = cname + "=";
+   var ca = document.cookie.split(';');
+   for (var i = 0; i < ca.length; i++) {
+     var c = ca[i];
      while (c.charAt(0) == ' ') {
        c = c.substring(1);
      }
@@ -313,7 +380,7 @@ var al = document.getElementById("uploader");
 			 if(getCookie('bribes')==""){
 			 setTimeout(function(){alert('You have been awarded 10 Dan bribes!')
 			 document.cookie='bribes=10;'
-			 },10000)
+			 },3000)
 			 }
 			 var target = getCookie('bribes')
 			 var ide = 0
@@ -340,8 +407,17 @@ var al = document.getElementById("uploader");
 setInterval(function(){
             var d = new Date();
             var t = d.toLocaleTimeString();
-						document.getElementById('award').innerHTML = t.split(':')[2].split(' ')[0]+'%'
-						document.getElementById('award').style.width = t.split(':')[2].split(' ')[0]+'%'//d.getDay()
+						var doy = d.getDay()
+						var dfd = ''
+						document.getElementById('award').innerHTML = 7-doy+' days past'
+						document.getElementById('award').style.width = Number(Number(Number(Number(7-doy))/ 7)*100)+'%'//d.getDay()
+						if(doy != 7){
+						dfd = doy
+						} else {
+						dfd = ''
+						
+						}
+					//	document.getElementById('dfd').innerHTML = dfd + ' to go'
 						},1000)
 </script>
 </html>
